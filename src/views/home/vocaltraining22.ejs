@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/vocaltraining.js"></script>
+  <link rel="stylesheet" href="./css/home/vocaltraining.css">
+  <link rel="stylesheet" href="./css/home/style.css">
+  <link rel="stylesheet" href="./css/home/vocalplayer.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/wavesurfer.min.js"></script>
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
+
+<!-- wavesurfer.js microphone -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/plugin/wavesurfer.microphone.min.js"></script>
+
+
+  <title>UNIVERSING</title>
+</head>
+
+<body>
+  <header>
+    <div class="title">
+      애상
+    </div>
+    <div>
+      10CM
+    </div>
+  </header>
+  <main>
+    <div class="wav">
+      <div id="waveform"></div>
+      <div id="waveform2"></div>			
+    </div>
+
+
+    
+  <div class="record">
+    <button id="btn">
+      <div id="player" class="play"  onclick="wavesurfer.playPause();microphone.start();music_btn();"><img src="imgs/vocalplay.png" alt=""></div>
+      <div id="stop" class="stop"  onclick="wavesurfer.pause()"><img src="imgs/vocalstop.png" alt=""></div>
+    </button>
+    <!-- <audio controls id="adio">녹음된 소리를 재생할 audio 엘리먼트</audio> -->
+  </div>
+
+
+
+    <div class="sentence">
+        <div class="lyrics-wrapper">
+            <ul class="lyrics">
+              <li class="verse highlight">말리지마 </li>
+              <li class="verse">내 이런 사랑을</li>
+              <li class="verse">너만 보면 </li>
+              <li class="verse">미칠 것 같은 이 맘을</li>
+              <li class="verse">누가 알겠어</li>
+              <li class="verse">웨딩드레스 입은</li>
+              <li class="verse">니 곁에 다른 </li>
+              <li class="verse">사람이</li>
+              <li class="verse">음~</li>
+              <li class="verse">~</li>
+              <li class="verse">~</li>
+              <li class="verse">~</li>
+              <li class="verse">~</li>
+              <li class="verse">~</li>
+              <li class="verse">~</li>
+              <li class="verse">알잖아</li>
+              <li class="verse">너를 이토록</li>
+              <li class="verse">사랑하며 기다린</li>
+              <li class="verse"> 나를  </li>
+              <li class="verse">뭐가 그리 바쁜지</li>
+              <li class="verse">너무 보기 힘들어</li>
+              <li class="verse">넌 도대체 뭐하고 다니니</li>
+              <li class="verse">그게 아냐 이유는 묻지마</li>
+              <li class="verse">그냥 믿고 기다려</li>
+              <li class="verse">주겠니</li>
+              <li class="verse">내게도 사랑을 위한</li>
+              <li class="verse">시간이 필요해</li>
+              <li class="verse">널 받아들일 수 있게</li>
+              <li class="verse">일부러 피하는 거니</li>
+              <li class="verse">문자 해도 </li>
+              <li class="verse">아무 소식 없는 너</li>
+              <li class="verse">싫으면 그냥 </li>
+              <li class="verse">싫다고</li>
+              <li class="verse">솔직하게 말해봐</li>
+              <li class="verse">말리지마</li>
+              <li class="verse">내 이런 사랑을</li>
+              <li class="verse">너만 보면 </li>
+              <li class="verse">미칠 것 같은이 맘을 </li>
+              <!-- <li class="verse"></li> -->
+              <li class="verse">누가 알겠어 웨딩드레스 입은</li>
+              <!-- <li class="verse"></li> -->
+              <li class="verse">니 곁에 다른 사람이 </li>
+              <!-- <li class="verse"></li> -->
+              <li class="verse">난 두려워</li>
+              <li class="verse">나보다 더 멋진</li>
+              <li class="verse">그런 남자</li>
+              <li class="verse">니가 만날까봐</li>
+              <li class="verse">아니야 그렇지 않아</li>
+              <li class="verse">정말 너 하나뿐야</li>
+              <li class="verse">속는셈 치고</li>
+              <li class="verse">한번 믿어봐</li>
+              <li class="verse"></li>
+              <li class="verse"></li>
+              <li class="verse"></li>
+              <li class="verse"></li>
+              <li class="verse"></li>
+              <li class="verse"></li>
+              <li class="verse"></li>
+
+          </div>   
+    </div>
+
+    <div class="result">
+        <button class="result" onclick="location.href='./vocalloding'">결과보기</button>
+    </div>
+  </main>
+ 
+ 
+ 
+
+  <script>
+    var wavesurfer = WaveSurfer.create({
+      container: '#waveform',
+      barWidth: 5,
+      waveColor: 'pink',
+      progressColor: 'hotpink'
+});  
+
+wavesurfer.load('video/sorrow.wav');
+
+
+var wavesurfer2 = WaveSurfer.create({
+    container: '#waveform2',
+    waveColor: '#D2EDD4',
+    progressColor: '#46B54D',
+    barHeight: 2
+});
+
+
+var microphone = Object.create(WaveSurfer.Microphone);
+
+microphone.init({
+    wavesurfer: wavesurfer2
+});
+
+microphone.on('deviceReady', function(stream) {
+    console.log('Device ready!', stream);
+});
+microphone.on('deviceError', function(code) {
+    console.warn('Device error: ' + code);
+});
+
+
+// pause rendering
+//microphone.pause();
+
+// resume rendering
+//microphone.play();
+
+// stop visualization and disconnect microphone
+//microphone.stopDevice();
+
+// same as stopDevice() but also clears the wavesurfer canvas
+//microphone.stop();
+
+// destroy the plugin
+//microphone.destroy();
+  </script>
+
+</body>
+
+</html>

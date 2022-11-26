@@ -1,0 +1,99 @@
+
+@import url(./style.css);
+header{
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  margin: var(--margin-small);
+}
+input:focus {outline:none;}
+.backBtn{
+  flex: 1;
+}
+.singup_title{
+  text-align: center;
+  flex:9;
+  font-size: var(--font-large);
+  font-weight:bold;
+}
+.sort{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.pw_attention{
+  position:relative;
+  bottom: 12px;
+  font-size:var(--font-small);
+  color:var(--pink-color);
+  margin: 3px var(--margin-small)
+  0 5%;
+}
+.login_bar ,.member_bar ,.agree_bar{
+  font-weight:bold;
+  font-size:var(--font-medium);
+  width: 99%;
+  padding:var(--margin-small);
+  margin-bottom:var(--margin-small) ;
+  border-bottom: 2px solid ;
+  box-shadow:-1px 5px 10px -8px rgb(0 0 0 / 27%);
+}
+.login_info button  , .pnum_input_confirm button{
+  position: relative;
+  width: 25%;
+  height: 37px;
+  border: 0;
+  top: 2px;
+  background-color:var(--blue-color);
+  color:var(--white-color);
+  font-weight: bold;
+  font-size:var(--font-small);
+}
+.id_input input ,.nickname_input input,
+.pnum_input_confirm input{
+  border-width:0 0 1px 0;
+  border-style:ridge;
+  padding: var(--font-small);
+  margin: 8px -6px 15px 5%;
+  color:#000;
+
+  width:60%;
+}
+.date_gender_input input[type=text]{
+  border-width:0 0 1px 0;
+  border-style:ridge;
+  margin: var(--margin-small) var(--margin-small)
+  var(--margin-small) 5%;
+  width:50%;
+  padding: 12px 11px;
+  color:#000;
+}
+.pw_input input, .name_input input{
+  border-width:0 0 1px 0;
+  border-style:ridge;
+  padding: 12px 11px;
+  margin: var(--margin-small) var(--margin-small)
+  var(--margin-small) 5%;
+  color:#000;
+  width: 85%;
+}
+.female_input , .male_input{
+  font-size:1em;
+}
+.agree_check{
+  display:flex;
+  justify-content:stretch;
+  flex-direction: column;
+  margin: var(--margin-small) var(--margin-small)
+  var(--margin-small) 5%;
+  }
+#agr2{
+  margin:var(--margin-small) 0 var(--margin-small) 0;
+  }
+  .singup_btn button{
+    width: 100%; 
+    height:50px;
+    border:0;
+    font-size: var(--font-medium);
+    bottom: 0px;
+  }

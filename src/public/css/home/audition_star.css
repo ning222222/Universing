@@ -1,0 +1,192 @@
+@import url("./style.css");
+
+header{
+  display:flex;
+  justify-content:space-between;
+  margin:var(--margin-small);
+  font-size: var(--font-large);
+  font-weight: bold;
+  color:rgb(0, 0, 0)
+}
+.return {
+  flex-grow: 1;
+  padding-left: 12px;
+}
+
+.top_text {
+  flex-grow: 1;
+  padding-right: 12px;
+}
+
+main{
+  margin: 24px;
+}
+.top_text {
+  flex-grow: 1;
+  padding-right: 10px;
+}
+
+.nav_bar {
+  margin-top: 24px;
+  border-bottom: 1px solid var(--gray-color);
+}
+
+.nav_title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav_bar li{
+  padding: 12px;
+}
+
+.nav_title li:hover {
+  border-bottom: 3px solid blue;
+  font-weight: bold;
+}
+
+.sub_title{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  margin: 10px 10px 0 10px;
+}
+
+.sub_1{
+  font-size: 25px;
+  font-weight: bold;
+  color:#0038FF;
+  margin: 12px;
+}
+
+.sub_2{
+  margin: 12px;
+}
+
+.sub_2 i{
+  padding: px;
+}
+
+.rank{
+  display:flex;
+  justify-content: center;
+}
+
+.rowrank{
+  width:100px;
+  height: 100px;
+  border-radius: 100px;
+  margin-top:30px;
+}
+.hirank{
+  width:130px;
+  height: 130px;
+  border-radius: 100px;
+}
+.rank_profile{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin:20px 10px 20px 10px;
+}
+.rank_num{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom:20px;
+  background:rgb(255, 206, 133);
+  color:rgb(0, 0, 0);
+  border-radius: 1.75rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.3rem;
+  margin: 0 auto 0 auto;
+  box-shadow: 0 1px 2px 0 rgb(48 48 48 / 30%),
+   0 1px 3px 1px rgb(48 48 48 / 15%);
+   font-weight: bold;
+}
+
+.rank_list{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+} 
+
+.rank_list li{
+  padding: 0 0 2px 0;
+}
+
+.rank_name{
+  font-weight: bold;
+}
+.rank_bnt{
+  padding:3px 7px;
+  border-radius: 5px;
+  border:none;
+  background-color: var(--pink-color);
+  font-weight: bold;
+}
+.rowrank_list{
+margin:10px 0 10px 0;
+}
+.list{
+  display: flex;
+  margin: 12px 0 12px 0;
+  justify-self:start;
+  align-items: stretch;
+  padding: 0;
+  font-size: 18px;
+  width:100%;
+  padding:9px 0 10px 5px;
+}
+.list img{
+  border-radius: 100px;
+  width:70px;
+}
+.list  li{
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  padding:3px;
+}
+.list_1{
+  display: flex;
+  justify-content:space-between;
+}
+.row_bnt{
+position:left;
+}
+.list div{
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+}
+.list div li span{
+  margin-left: 6px;
+}
+
+.hi i{
+  color:red;
+  padding-left: 4px;
+}
+.row i{
+  color:blue;
+  padding-left: 4px;
+}
+.row_name{
+  font-weight: bold;
+}
+
+.row_bnt button{
+  width:70px;
+  height: 40px;
+  margin:40px 10px 0 0 ;
+  background-color: var(--pink-color);
+  border-radius:5px;
+  border: 0px;
+  font-weight: bold;
+}
+

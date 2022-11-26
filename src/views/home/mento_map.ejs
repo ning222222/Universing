@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e0e0d61159.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/home/mento_map.css">
+    <title>UNIVERSING</title>
+</head>
+<body>
+
+    <header>
+        <div class="backBtn">
+            <i class="fa-solid fa-angle-left"></i>
+        </div>
+        <div class="mento_title">
+            멘토찾기
+        </div>
+    </header>
+
+    <section>
+        <div class="maptitle">
+            <div class="zoneName">영등포구</div>
+            <div class="mapCloseBtn"><i class="fa-solid fa-x"></i></div>
+
+        </div>
+
+        <div id="map" style="width:500px;height:500px;"></div>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2704e98c09e997cf5ff1e6200a7c665e"></script>
+    
+    </section>
+
+
+    <footer>
+        <ul class="bottom_bar">
+            <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="/post"><i class="fa-solid fa-rectangle-list"></i></a></li>
+            <li><a href="/music_list"><i class="fa-solid fa-music"></i></a></li>
+            <li><a href="/chat"><i class="fa-solid fa-comment"></i></a></i>
+            <li><a href="/myinfo"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+        var options = { //지도를 생성할 때 필요한 기본 옵션
+            center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+            level: 3 //지도의 레벨(확대, 축소 정도)
+        };
+        
+        var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+        
+        </script>
+</body>
+</html>

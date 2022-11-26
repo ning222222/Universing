@@ -1,0 +1,142 @@
+@import url(./style.css);
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.user-container {
+  flex: 1;
+  background: linear-gradient(180deg, rgba(0, 56, 255, 0.48) 0%, rgba(232, 174, 233, 0.5) 100%);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.user-container label {
+  font-size: 14px;
+  margin-right: 1rem;
+  font-size: 30px;
+}
+
+.user-container span {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.display-container {
+  flex: 12;
+  overflow-y: scroll;
+}
+
+.input-container {
+  flex: 1;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  width: 80%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.chatting-input {
+  font-size: 12px;
+  height: 100%;
+  flex: 8;
+  border: none;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.send-button {
+  flex: 1;
+  border: none;
+  background: #fff;
+  font-size: 30px;
+  color: rgb(117, 117, 117);
+}
+
+.fa-regular {
+  font-size: 30px;
+  color: rgb(117, 117, 117);
+}
+
+.chatting-list {
+  margin: 12px;
+}
+
+.chatting-list li {
+  width: 90%;
+  padding: 0.3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-top: 0.5rem;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile .image {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 70px;
+  height: 70px;
+
+}
+
+.profile .user {
+  font-size: 10px;
+  margin-bottom: 0.3rem;
+}
+
+.message {
+  border-radius: 5px;
+  padding: 0.8rem;
+  font-size: 12px;
+  margin: 0 15px 10px 15px;
+  flex: 7;
+}
+
+.time {
+  font-size: 15px;
+  margin: 0 5px 10px 5px;
+
+}
+.sent{
+  flex-direction:row-reverse;
+  float:right;
+}
+.sent .message {
+  background: #DBDFF9;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  padding:10px;
+}
+
+.received .message {
+  background: #FFFFFF;
+  border: 1px solid #B6B6B6;
+  border-radius: 10px;
+  padding:10px;
+}

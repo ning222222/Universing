@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home/custom_matching.css">
+    <script src="https://kit.fontawesome.com/e0e0d61159.js" crossorigin="anonymous"></script>
+    <title>UNIVERCING</title>
+</head>
+<body>
+  <header>
+    <div class="backBtn" onclick="history.back();">
+        <i class="fa-solid fa-angle-left"></i>
+    </div>
+    <div class="title">
+        추천멘토
+    </div>
+<div></div>
+</header>
+
+    <main>
+      
+        <section class="mento">
+            <%
+            for(var i=0;i<3;i++)
+            {
+                var data = rows[i];
+                %> 
+            <div class="list">
+             
+                <div class="mentoimg">
+                <img src="<%=data.img%>">
+                </div>
+                <div class="text">
+                <%=data.nickname%>
+                </div>
+                <div class="text">
+                    <%=data.title%>
+                    </div>   
+                <div class="button">
+                    <button onclick="location.href='/mentoView/<%=rows[i].m_idx%>'">상세보기</button>
+                </div>
+             
+            </div>
+      
+   
+          
+            <%}%>  
+        </section>
+       
+    
+        <div class="btnBox">
+            
+        <button class="return" onclick="location.href='mento'">
+         멘토 더보기
+          </button>
+        </div>
+    </main>
+    <div style="height:150px;">
+
+    </div>
+    <footer>
+        <ul class="bottom_bar">
+            <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="/post"><i class="fa-solid fa-rectangle-list"></i></a></li>
+            <li><a href="/music"><i class="fa-solid fa-music"></i></a></li>
+            <li><a href="/chat"><i class="fa-solid fa-comment"></i></a></i>
+            <li><a href="/myinfo"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
+    </footer>
+</body>
+</html>

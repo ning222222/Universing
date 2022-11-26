@@ -1,0 +1,19 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+#prog_num{
+  font-size: 46px;
+  font-weight: bold;
+}
+.img_loding{
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+.loding_text{
+  font-size: 20px;
+  font-weight: bold;
+}

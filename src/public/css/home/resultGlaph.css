@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+}
+
+
+header{
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    margin: 24px;
+    font-weight: bold;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 12px 12px 12px;
+}
+
+nav>div{
+    text-align: center;
+    width: 200px;
+}
+
+.graph1, .graph2, .graph3, .graph4{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.originGraph1, .originGraph2, .originGraph3, .originGraph4 {
+    width: 200px;
+    height: 150px;
+    background:red;
+    margin-top: 12px;
+}
+.originGraph1, .myGraph1{
+  position: relative;
+}
+.originSong{
+  position: absolute;
+  top:-30px;
+  left:85px;
+}
+.mySong{
+  position: absolute;
+  top:-30px;
+  left:56px;
+}
+.myGraph1, .myGraph2, .myGraph3, .myGraph4 {
+    width: 200px;
+    height: 150px;
+    background:red;
+    margin-top: 12px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    width: 150px;
+    font-size: 24px;
+    padding: 6px;
+    margin-top: 36px;
+    position: absolute;
+    bottom: 150px;
+}
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button{
+  margin-bottom:20px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    box-shadow: 1px 2px 1px #545454;
+    font-size: 24px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    align-items: center;
+    background: rgb(144, 144, 255);
+    color: white;
+  }
+  section img{
+    width:110%;
+   
+  }
+  .user_img{
+ 
+  }
+  .opacity_img{
+    position: absolute;
+    opacity: 0.5;
+    filter: hue-rotate(90deg);
+
+  }

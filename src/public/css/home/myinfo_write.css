@@ -1,0 +1,96 @@
+@import url("./style.css");
+
+header{
+  display:flex;
+  justify-content:space-between;
+  margin:var(--margin-small);
+  font-size: var(--font-large);
+  font-weight: bold;
+  color:rgb(0, 0, 0)
+}
+.return {
+  flex-grow: 1;
+  padding-left: 12px;
+}
+
+.top_text {
+  flex-grow: 1;
+  padding-right: 12px;
+}
+
+main{
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+}
+.photo_change{
+  margin-top:var(--margin-large);
+  height: 210px;
+}
+.photo_change img{
+  width:200px;
+  height: 200px;
+  border-radius: 100%;
+  border: solid 1px var(--gray-color);
+}
+.change input{
+  display: none;
+}
+.change{
+  margin: var(--margin-small);
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+}
+.change label{
+  color:var(--blue-color);
+  font-weight: bold;
+  font-size: var(--font-medium);
+  margin-bottom:2px;
+}
+.del a{
+  color:var(--pink-color);
+  font-weight: bold;
+  font-size: 16px;
+}
+.nick_name{
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  font-weight: bold;
+}
+.name{
+  margin-top:var(--margin-small);
+  margin-bottom:6px;
+}
+.nick_name input{
+  padding: var(--margin-small);
+  border: 1px solid rgb(150, 150, 150);
+  border-radius: 5px;
+}
+.introduce{
+  display: flex;
+  flex-direction: column;
+  margin:var(--margin-small) ;
+  width: 95%;
+}
+.int{
+  margin-top:var(--margin-small);
+  margin-bottom:6px;
+  font-weight: bold;
+}
+.introduce textarea{
+  height: 150px;
+ 
+  resize: none;
+  padding: var(--margin-small);
+  border: 1px solid rgb(150, 150, 150);
+  border-radius: 5px;
+}
+.sub_btn input[type="submit"]{
+  margin-left:6px;
+}
+.sub_btn input{
+  width: 100px;
+  height: 30px;
+}

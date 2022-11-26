@@ -1,0 +1,77 @@
+@import url(./style.css);
+
+header{
+  margin: 20px 0 12px 10px;
+  font-size: 24px;
+  font-weight:bold;
+} 
+
+.top_bar{
+  border-bottom: 1px solid var(--gray-color);
+  margin-top: 24px;
+}
+
+.nav_title{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav_title li{
+   padding: 12px;
+}
+
+.nav_title li:hover{
+  border-bottom: 3px solid blue;
+  font-weight: bold;
+}
+
+
+.chat_list{
+  margin: 24px;
+}
+
+.chat_list img{
+  width: 70px;
+  height: 70px;
+  border-radius:100%;
+}
+
+.chat_1 , .chat_2, .chat_3, .chat_4 ,.chat_5{
+  display: flex;
+  justify-content:space-between;
+  margin: 30px 2px 40px 0;
+}
+.chat_1_group,.chat_2_group,.chat_3_group,.chat_4_group,.chat_5_group{
+  display: flex;
+}
+
+.chat_1_detail,.chat_2_detail,.chat_3_detail,.chat_4_detail,.chat_5_detail{
+  margin: 0 0 0 15px ;
+}
+.chat_list .name{
+  font-size:17px ;
+  font-weight: bold;
+ 
+}
+.chat_list .chat_hint{
+  font-size:12px;
+  margin-top: 8px;
+  color:rgb(112, 112, 112);
+}
+
+.time{
+  color:rgb(196, 195, 195);
+  font-size:13px;
+}
+
+.read{
+  text-align:center;
+  background:rgb(255, 172, 172);
+  width:30px;
+  height:30px;
+  border-radius: 100%;
+  margin: 5px 3px;
+  line-height: 30px;
+  font-size: 12px;
+}

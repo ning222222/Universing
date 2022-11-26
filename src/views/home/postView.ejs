@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e0e0d61159.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/home/style.css" />
+    <link rel="stylesheet" href="/css/home/postView.css" />
+    <title>UNIVERSING</title>
+</head>
+<body>
+
+    <header class="top_bar">
+  
+        <div class="return" onclick="history.back();"><i class="fa-solid fa-angle-left"></i></div>
+        <div class="top_text">게시물</div>
+        <div class="icons">
+        </div>
+    </header>
+
+    <%
+    for(var i=0;i<rows.length;i++)
+    {
+        var data = rows[i];
+        %>
+    <form action="/board/update" mathod="post">
+        <div class="section">
+            <div class="postTitle">
+               <%=data.title%>
+            </div>    
+            <div class="user">
+                <div class="userInfo">
+                    <div class="userImg">
+                        <img src=".<%=data.image%>" alt="">
+                    </div>
+                    <div>
+                        <div class="userId"><%=data.nickname%></div>
+                        <div class="postTime">2022.07.19  22:00</div>
+                    </div>
+                </div>
+        
+                <button type="submit" class="postDel">글삭제</button>
+    
+            </div>
+    
+            <hr>
+        
+            <div class="userPost">
+                <%=data.content%>
+            </div>
+    
+            <hr>
+        </div>
+    </form>
+
+    <%}%>
+    <form method="post" action="/comment">
+        <input type="hidden"name="idx" type="text" value="<%=rows[0].idx%>" />
+        <div class="section">
+            <label>댓글</label>
+            <div class="commentWrite">
+
+                <input type="text"  class="commentArea" name="content" id="content" placeholder="댓글을 입력하세요."></input>
+
+                <button type="submit" class="commentBtn">등록</button>
+            </div>
+        </form>
+        <%
+        for(var i=0;i<rows2.length;i++)
+        {
+            var data = rows2[i];
+            %>
+            <div class="commentBox">
+                <div class="comenttUser">
+            
+                    <div class="user2">
+                        <div class="userImg2"><img src="lovedive.png" alt=""></div>
+                        <div class="userId2"><%=data.nickname%></div> <div class="commentView">
+                            <%=data.date%>
+                        </div>
+                    </div>
+        
+                    <div class="commentView">
+                        <%=data.content%>
+                    </div>
+                   
+                </div>
+                
+            </div>
+            <%}%>
+        </div>
+
+    <footer>
+        <ul class="bottom_bar">
+            <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="/post"><i class="fa-solid fa-rectangle-list"></i></a></li>
+            <li><a href="/music_list"><i class="fa-solid fa-music"></i></a></li>
+            <li><a href="/chat"><i class="fa-solid fa-comment"></i></a></i>
+            <li><a href="/myinfo"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
+    </div>
+
+    
+
+</body>
+</html>

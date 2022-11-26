@@ -1,0 +1,155 @@
+/* @import url(./style1.css); */
+@import url(./stysle.css);
+
+header{
+  display: flex;
+  justify-content: center;
+  margin-top:100px;
+  font-size:300%;
+  font-weight: bold;
+  color: var(--blue-color);
+}
+header img{
+  width: 150px;
+}
+main{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--margin-large);;
+}
+input:focus {outline: none;}
+.email-box{
+  display: flex;
+  margin: var(--margin-small);
+
+}
+.email-box i{
+  margin:17px 10px 0 0;
+  font-size:30px;
+  color:rgb(107, 33, 129);
+}
+.login-box input{
+  padding: 11px 11px;
+  box-sizing: border-box;
+  margin: 8px;
+  border-left-width:0;
+  border-right-width:0;
+  border-top-width:0;
+  border-bottom-width:1;
+  width: 250px;
+}
+.login-box  .password-box {
+  display: flex;
+  flex-wrap:wrap;
+   justify-content:center;
+  height:50px;
+  margin: var(--margin-smaill);
+}
+.password-box i{
+  margin:17px 6px 0 0;
+  font-size:30px;
+  color:rgb(168,158,198);
+}
+.login-btn{
+  display: flex;
+  justify-content: center;
+  margin-top:var(--margin-large) ;
+}
+/* */
+.btn,
+.btn::after {
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn {
+  background: none;
+  border: 1px outset var(--gray-color);
+  border-radius: 5px;
+  color: rgb(107, 33, 129);
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  position: relative;
+  text-transform: uppercase;
+  width:90%;
+  height:30%;
+  
+}
+
+.btn::before,
+.btn::after {
+  background:  linear-gradient(to right, #8FA4FB, pink);
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+.btn:hover {
+  color: #fff;
+}
+/* BUTTON 2 */
+.btn::after {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0;
+}
+
+.btn:hover:after {
+  width: 100%;
+}
+/**/
+.or-line{
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--margin-large);
+  color: var(--gray-color);
+  font-size: var(--font-small);
+}
+.find-id-pw{
+  font-size:var(--font-small);
+  display: flex;
+  justify-content: center;
+  margin:10px 0 30px 0 ;
+}
+.line{
+ margin-top: var(--margin-large);
+ background-color: var(--gray-color);
+ height: 0.01em;
+ border: 0px;
+}
+.main2{
+  display: flex;
+  justify-content: center;
+}
+.other-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.other-login button{
+  width: 300px;
+  height:50px;
+  background-color:var(--blue-color);
+  border:0;
+  color:var(--white-color);
+  font-size:var(--font-large);
+  margin-bottom:var(--margin-small) ;
+} 
+footer{
+  margin: 10px 0 0 0;
+}
+.email-signup-nologin{
+  display: flex;
+  justify-content: center;
+  font-size:var(--font-small);
+}
+.email-signup-nologin span{
+  margin:5px;
+}

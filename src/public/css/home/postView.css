@@ -1,0 +1,295 @@
+@import url("./style.css");
+header{
+    display:flex;
+    justify-content:space-between;
+    margin:var(--margin-small);
+    font-size: var(--font-large);
+    font-weight: bold;
+    color:rgb(0, 0, 0)
+  }
+  .return {
+    flex-grow: 1;
+    padding-left: 12px;
+  }
+  
+  .top_text {
+    flex-grow: 1;
+    padding-right: 12px;
+  }
+  
+section{
+    margin: 24px;
+}
+
+/* commnet */
+.postTitle{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.postTime{
+    font-size: 12px;
+}
+
+.userImg img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.userImg2 img{
+    width: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    margin: 12px;
+    justify-content: space-between;
+
+}
+
+.user2{
+    display: flex;
+    align-items: center;
+    margin: 12px;
+}
+
+
+.postDel{
+    font-size: 12px;
+}
+
+.userInfo{
+    display: flex;
+}
+
+.userImg{
+    margin-right: 6px;
+}
+
+/* .userId{
+    margin: 12px;
+    font-weight: bold;
+    font-size: 12px;
+} */
+
+
+.userId2{
+    margin: 12px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+.userPost{
+    margin: 24px;
+}
+
+
+.commentCnt{
+    font-size: 12px;
+    font-weight: bold;
+    margin: 12px;
+
+}
+
+.commentView{
+    font-size: 12px;
+    margin-left: 12px;
+}
+
+.commentWrite{
+    display: flex;
+    align-items: center;
+}
+
+.commentArea{
+    width: 80%;
+    height: 30px;
+    margin: 12px;
+}
+.commentBtn{
+    font-size: 12px;
+    height: 35px;
+    width: 80px;
+}
+
+.commu_title{
+    margin-top: var(--margin-large);
+    text-align: center;
+}
+
+.section{
+    margin: 24px;
+}
+
+.postForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.postSelect{
+    margin-bottom: 24px;
+}
+
+.postContent{
+    width: 100%;
+    height: 350px;
+}
+
+/* 
+.postWrite{
+    width:100%;
+    height: 450px;
+} */
+
+
+.btnBox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 12px;
+  
+}
+
+.cancleBtn, .uploadBtn {
+    margin: 12px 6px 12px 6px;
+    width: 100px;
+    height: 30px;
+}
+
+.nav_title{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.nav_title li{
+    margin: var(--margin-small);
+}
+
+.nav_title li:hover{
+    border-bottom: 3px solid blue;
+    font-weight: bold;
+}
+
+.search_bar{
+    display: flex;
+    justify-content: center;
+}
+
+.search_bar div{
+    margin: var(--margin-small);
+}
+
+.search_text input{
+    width: 300px;
+    height: 20px;
+}
+
+.filter{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.filter_box{
+    display: flex;
+}
+
+.filter_box li{
+    margin: 12px 0 12px 12px;
+}
+
+.filter_icon{
+    margin: var(--margin1);
+}
+
+.post{
+    border: 1px solid rgb(189, 189, 189);
+    padding: 24px 12px 12px 12px;
+    margin: 0 12px 12px 12px
+}
+
+.post_head{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.post_avatar{
+    display: flex;
+}
+
+
+.post_avatar img, .post_time{
+    margin: 0 12px 0 12px;
+}
+
+
+.post_body{
+    margin: var(--margin-small);
+}
+
+.post_title{
+    font-size: var(--font-reguler);
+    font-weight: bold;
+}
+
+.post_text{
+    display:-webkit-box; 
+    word-wrap:break-word; 
+    -webkit-line-clamp:4; 
+    -webkit-box-orient:vertical; 
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    height:100%;
+}
+.post_bottom{
+    display: flex;
+    justify-content: space-between;
+    margin: var(--margin-small);
+    align-items: center;
+}
+
+.post_bottom li{
+    margin-top: 12px;
+    font-size: 12px;
+}
+
+.post_view, .post_btn{
+    display: flex;
+}
+
+.post_view li {
+    margin-right: 12px;
+}
+
+.post_btn div{
+    margin-left: 12px;
+}
+
+
+
+.bottom_navbar{
+    border-top: 2px solid black;
+    margin-top: var(--margin2);
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    position: sticky;
+    bottom: 0;
+}  
+  .bottom_navbar ul{
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: var(--margin-small);
+  }
+  

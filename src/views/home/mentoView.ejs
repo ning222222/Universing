@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/e0e0d61159.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/home/mentoDetailPage.css" />
+    <title>UNIVERSING</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <header class="top_bar">
+  
+      <div class="return" onclick="history.back();"><i class="fa-solid fa-angle-left"></i></div>
+      <div class="top_text">클래스 상세페이지</div>
+      <div class="icons">
+          <div class="like-btn">           
+            
+          </div>
+        <!-- <i class="fa-solid fa-arrow-up-from-bracket"></i> -->
+      </div>
+  </header>
+    <div class="detailpage_preview">
+      <div class="preview_img">
+      <div class="mainImg">
+        <img src="<%=rows.img%>" alt="" />
+      </div>
+      <div class="detail_img">
+        <div class="img1"><img src="<%=rows.img%>" alt="" /></div>
+        <div class="img2"><img src="<%=rows.img%>" alt="" /></div>
+        <div class="img3"><img src="<%=rows.img%>" alt="" /></div>
+      </div>
+    </div>
+      <div class="preview_text">
+        <input type="hidden" name="mento_idx" id="mento_idx" value="<%=mento_idx%>" />
+
+        <div class="title"><%=rows.title%></div>
+
+        <div class="mentoInfo">
+          <div class="mentoImg">
+            <img src="../../imgs/mentoIMG1.png" alt="" />
+            <div class="mentoName"><%=rows.nickname%></div>
+            
+            
+
+            <div class="mentoScore">
+           
+              <div class="scroeStar">
+                <i class="fa-solid fa-heart"></i>
+                <span class="scroeText"><%=rows.likes%></span>
+              </div>
+           
+            </div>
+          </div>
+          <a href="/mento_info/<%=rows.user_idx%>">
+            <button class="mentoInfoBtn">멘토정보</button>
+          </a>
+        </div>
+
+        <div class="classPrice">
+          <div class="price">금액</div>
+          <div class="totalPrice"><%=rows.price%>원</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="detailpage_body">
+      <div class="title">클래스소개</div>
+
+      <div class="body">
+        <div class="img">
+          <!-- <img src="imgs/man1.jpg" alt="" /> -->
+        </div>
+
+        <div class="text"><%=rows.content%></div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="totalBtn">
+        <div><%=rows.price%>원</div>
+
+        <div class="btn">
+          <button class="btn1" onclick="javascript:btn()">신청하기</button>
+          <button class="btn2" onclick="location.href='/chat';">채팅</button>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+$('.like-btn').on('click', async function() {
+    const mentoIdx = $('#mento_idx').val()
+    let result = await fetch('/mento_like', {
+        method: 'post',
+        headers: {
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          mentoIdx: Number(mentoIdx)
+        })
+    })
+
+    result = await result.json()
+
+    console.log(result)
+});
+
+let $btnLike = $('.like-btn');
+$btnLike.click(function(){
+  $(this).toggleClass('check')
+})
+
+function btn(){
+    alert('신청이 완료되었습니다.');
+}
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,300' rel='stylesheet'
+    type='text/css'>
+    <script src="https://kit.fontawesome.com/e0e0d61159.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/home/style.css">
+  <link rel="stylesheet" href="/css/home/login.css">
+  <script src="/js/home/login.js"defer></script>
+  <title>UNIVERSING</title>
+
+</head>
+
+<body>
+  <!--헤더유니버싱-->
+  <header>
+    <img src="imgs/login-logo.png" alt="">
+  </header>
+  <!--로그인 부분-->
+  <main>
+    <section class="login-main">
+      <!-- 메인 로그인-->
+
+      <form>
+        <!--이메일, 비밀번호 입력-->
+        <article class="login-box">
+          <!--이메일 입력-->
+          <div class="email-box">
+            <span><i class="fa-solid fa-user-astronaut"></i></span> 
+            <span><input type="email" name="email" class-="id" id="email" placeholder="이메일을 입력하세요." ></span>
+          </div>
+          <!--비밀번호 입력-->
+          <div class="password-box">
+            <i class="fa-solid fa-key"></i>
+            <input type="password" name="pwd" id="psword" placeholder="비밀번호를 입력하세요.">
+          </div>
+        </article>
+        <div class="login-btn">
+          <button 
+          type="button" 
+          class="btn"
+          id="button">
+          로그인</button>
+        </div>
+      </form>
+      <div class="find-id-pw">
+        <a href="#">아이디 / 비밀번호 찾기 ></a>
+      </div>
+    </section>
+
+  </main>
+  <div class="main2">
+    <section>
+      <!--그 외 방법 로그인-->
+      <article class="other-login">
+        <!-- <div class="kakao-login">
+          <a href="javascript:kakaoLogin();">
+            <button>카카오톡 로그인</button>
+          </a>
+        </div>
+        <div class="fb-login"><button>페이스북 로그인</button></div>
+        <div class="naver-login"><button>네이버 로그인</button></div>
+      </article>
+    </section>
+  </div> -->
+  <footer>
+    <div class="email-signup-nologin">
+      <span> <a href="/register">이메일로 가입하기</a> </span> <span>|</span> <span><a href="main">둘러보기</a> </span>
+    </div>
+  </footer>
+  <script>
+    // let IDinput =document.getElementById("email");
+    let PWinput =document.getElementById("psword");
+    // IDinput.addEventListener("keyup", function (event) {
+    //   if (event.keyCode === 13) {
+    //     event.preventDefault();
+    //     document.getElementById("button").click();
+    //   }
+    // });
+    PWinput.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("button").click();
+      }
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+@import url("./style.css");
+
+
+html{
+  /* margin: 0;
+  height: 200%;
+  background:linear-gradient(rgb(79, 79, 255),rgb(255, 221, 226));
+  background-repeat: no-repeat; */
+}
+
+body{
+  background-image: linear-gradient(rgb(79, 79, 255), rgb(255, 221, 226));
+  background-repeat: no-repeat;
+}
+button{
+  cursor: pointer;
+}
+#waveform wave,
+#waveform2 wave{
+  overflow: hidden !important;
+}
+header{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:var(--margin-small);
+  font-size: var(--font-medium);
+  font-weight: bold;
+  color:#fff
+}
+
+.title{
+  margin:12px;
+}
+
+.audiopl audio{
+	width: 100%;
+}
+
+.record{
+	display: flex;
+	align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.music-lyrics{
+  white-space: pre-line
+}
+
+#btn{
+   border: 0;
+   background: rgb(0, 0, 0,0);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+#btn div{
+  padding: 0px 12px 0px 12px;
+}
+
+.play img{
+  width: 30px;
+  height: 30px;
+}
+
+.stop img{
+  width: 30px;
+  height: 30px;
+}
+
+.result{
+  display: flex;
+  justify-content: center;
+  text-align: center
+}
+.recording-btn button{
+  margin: 36px 17px;
+  }
+.recording-btn button{
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  box-shadow: 1px 2px 1px #545454;
+  font-size: 24px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  align-items: center;
+  background: rgb(144, 144, 255);
+  color: white;
+  transition: .3s;
+}
+.recording-btn button:hover{
+  color:rgb(144, 144, 255);
+  background : white;
+}
+
+#btn-release-microphone{
+  display: none;
+}
+.recording-btn{
+  display: flex;
+  justify-content: center;
+}
+.result-recording{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+}
+.result-recording #downloadButton{
+  margin:40px 0;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  box-shadow: 1px 2px 1px #545454;
+  font-size: 24px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  align-items: center;
+  background: rgb(144, 144, 255);
+  color: white;
+  transition: .3s;
+}
+.result-recording #downloadButton:hover{
+  color:rgb(144, 144, 255);
+  background : white;
+}
+.result-recording .final-btn{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.result-recording .final-btn input{
+  width: 75%;
+}
+.result-recording .final-btn button{
+  margin-top: 10px;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  align-items: center;
+  background: #fff;
+  color: rgb(144, 144, 255);
+}
+.music-lyrics{
+  font-size: 14PX;
+  text-align: center;
+  line-height:2;
+  font-weight: 900;
+  color: #161616;
+  height: 300px;
+  overflow:auto;
+  width:90%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.music-lyrics::-webkit-scrollbar {
+  width: 10px;
+}
+.music-lyrics::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 221, 226);
+}
+.music-lyrics::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.368);
+}
+

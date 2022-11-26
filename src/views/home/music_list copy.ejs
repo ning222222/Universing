@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/69bf24ab9c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/home/music_list.css">
+  <title>UNIVERSING</title>
+</head>
+<body>
+  <header class="top_bar">
+    <div class="return" onclick="history.back();"><i class="fa-solid fa-angle-left"></i></div>
+    <div class="top_text">보컬트레이닝</div>
+    <div></div>
+  </header>
+<nav>
+  <div class="search">
+    <input type="text" class="searchBar">
+    <div class="search_btn">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </div>
+</div>
+<!-- <div class="nav_bar">
+  <div class="ranking">TOP 100 </div> 
+  <div class="nav_btn">
+  <span> 인기순 </span>
+  <span> 최신순 </span>
+  </div>
+</div> -->
+</nav>
+
+<main>
+  <ul>
+
+    <%
+    for(var i=0;i<rows.length;i++)
+    { var data = rows[i];
+    %> 
+      <li style="<%=(i > 6)  ? 'display:none;' : '' %>">
+        <ul class="list"  onclick="location.href='vocaltraining?m_idx=<%=data.m_idx%>';">
+          <div class="music_main" >
+          <li class="num">1</li>
+          <li><img src="./imgs/<%=data.music_image%>" width="70" height="70"></li>
+          <li>
+          <div class="music_title">
+            <span class="title"><%=data.music_name%></span>
+            <span class="singer"><%=data.music_singer%></span>
+          </div>
+          </li>
+        </div>
+        <div class="record">
+          <li ><i class="fa-solid fa-microphone"></i></li>
+        </div>
+        </ul>
+    
+      </li>
+    <%}%> 
+  </ul>
+
+</main>
+
+  <footer>
+    <ul class="bottom_bar">
+      <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+      <li><a href="/post"><i class="fa-solid fa-rectangle-list"></i></a></li>
+      <li><a href="/music_list"><i class="fa-solid fa-music"></i></a></li>
+      <li><a href="/chat"><i class="fa-solid fa-comment"></i></a></i>
+      <li><a href="/myinfo"><i class="fa-solid fa-user"></i></a></li>
+  </ul>
+</footer>
+</body>
+</html>

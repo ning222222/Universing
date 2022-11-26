@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/e0e0d61159.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/home/postWrite.css">
+
+    <title>UNIVERSING</title>
+    <script>
+        const showValue = (target) => {
+  // 선택한 option의 value 값
+  console.log(target.value);
+  
+  // option의 text 값
+  console.log(target.options[target.selectedIndex].text);
+}
+    </script>
+</head>
+<body>
+    <header>
+        <div class="commu_title">
+            게시판글쓰기
+        </div>
+    </header>
+
+    <section>
+        <form  class="postForm" method="post" action="/write">
+            <select class="postSelect" name="" id="">
+                <option value="">게시판을 선택하세요.</option>
+                <option value="자유">자유게시판</option>
+                <option value="후기">후기게시판</option>
+            </select>
+
+
+            <input type="text" name="title" id="title" class="postTitle" placeholder="제목을 입력하세요.">
+            <!-- <input type="text" name="id" id="id"  class="postTitle" placeholder="아이디를 입력하세요."> -->
+            <!-- <input type="text" name="content" id="content" class="postContent">-->
+            <textarea name= "content" id="content" class="postContent"></textarea>
+
+            <v-file-input class="input" type="file" counter show-size label="이미지 제출(여러개 가능)"
+        outlined dense multiple prepend-icon="mdi-camera" style="width: 400px; margin-left: 100px;"
+        @change="onImageChange"/>
+        
+ 
+
+            <div class="btnBox">
+                <div>     
+                    <v-img v-for="(item,i) in uploadimageurl" :key="i" :src="item.url"
+                    contain height="150px" width="200px" /> 
+                  
+                    <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+                </div>
+                <div>
+                    <button class="cancleBtn" onclick="history.back();" type="reset">취소</button>
+                    <button type="submit" class="uploadBtn">등록</button>
+                </div>
+                
+            </div>
+
+
+    
+        </form>
+    </section>
+    
+</body>
+</html>

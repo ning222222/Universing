@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e0e0d61159.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/home/post.css">
+    <title>UNIVERSING</title>
+</head>
+<body>
+    <header class="top_bar">
+        <div class="return" onclick="history.back();"><i class="fa-solid fa-angle-left"></i></div>
+        <div class="top_text">커뮤니티 게시판</div>
+        <div></div>
+      </header>
+
+    <nav>
+        <ul class="nav_title">
+            <li onclick="location.href='post'">자유게시판</li>
+            <li onclick="location.href='post2'">후기게시판</li>
+        </ul>
+
+        <div class="search_bar">
+            <div class="search_text"><input type="text"></div>
+            <div class="search_icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </div>
+    </nav>
+
+    <section>
+<!-- 
+        <div class="filter">
+            <ul class="filter_box">
+                <li>최신순</li>
+                <li>인기순</li>
+            </ul>
+            <div class="filter_icon">
+                <i class="fa-solid fa-filter"></i>
+            </div>
+        </div> -->
+
+
+
+        <%
+        for(var i=0;i<rows.length;i++)
+        {
+            var data = rows[i];
+            %>
+        <div class="post">
+            <div class="post_head">
+              <div class="post_avatar">
+                    <img src="<%=data.image%>" alt="" width="50px" height="50px">
+
+                    <div class="post_box">
+                        <div class="user_name">
+                            <%= data.nickname%>
+                        </div>
+                        <div class="comu_name">
+                            후기게시판
+                        </div>
+                    </div>
+                </div>
+                <div class="post_time">
+                  
+                </div>
+            </div>
+            <a href="/postView/<%=rows[i].idx%>">
+            <div class="post_body">
+                <div class="post_title"> <%=rows[i].title%>
+                    <input type="hidden" name="user_idx" id="user_idx" value="<%=rows.userid%>"></div>
+                <div class="post_text">
+                           </div>
+                           <%=data.content%>
+                            </div>
+                        </a>
+            <div class="post_bottom">
+                <ul class="post_view">
+                    <li>좋아요0</li>
+                    <li>댓글 0</li>
+                    <li>조회수 0</li>
+                </ul>
+                <div class="post_btn">
+                    <div class="comment">
+                        <i class="fa-solid fa-comment-dots"></i>
+                    </div>
+                    <div class="like">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </a>
+
+    </section>
+    <%}%>
+    <div style="height: 60px;">
+    <footer>
+        <ul class="bottom_bar">
+            <div id="buttonBox"><button onclick="location.href='write'">글쓰기</button></div>
+            <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="/post"><i class="fa-solid fa-rectangle-list"></i></a></li>
+            <li><a href="/music_list"><i class="fa-solid fa-music"></i></a></li>
+            <li><a href="/chat"><i class="fa-solid fa-comment"></i></a></i>
+            <li><a href="/myinfo"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
+    </footer>
+
+
+</body>
+</html>

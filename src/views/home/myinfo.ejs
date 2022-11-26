@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e0e0d61159.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/home/myinfo.css">
+    <title>UNIVERSING</title>
+</head>
+<body> 
+    <div class="myinfo">
+        <div class="top_icons">
+            <div class="left_menu">
+                <div class="slide_menu">  <i class="fa-solid fa-bars"   id="circleBt" onclick=" showLeftMenu(); return false;"></i>
+                </div>
+               
+                <div class="hideMenuBody" id="hideMenuBodyId">
+                    <div id="back_icon" onclick= "closeLeftMenu(); return false;"class="back_icon"><i class="fa-solid fa-angle-left"></i> 마이페이지</div>
+                    <div class="left_menu_item" onclick="location.href='/mypage_insert'">내 정보 수정</a></div>
+                    <div class="left_menu_item" >내가 쓴 글 보기</div>
+                    <div class="left_menu_item">위시리스트</div>
+                    <div class="left_menu_item">장바구니</div>
+                    <div class="left_menu_item">고객센터</div>
+                </div>
+            </div>
+            <div class="myinfo_btn">
+                <div class="follow_chat_btn">
+                    <div class="follow_btn">팔로우</div>
+                    <div class="chat_btn">메시지</div>
+                </div>
+            </div>
+        </div>
+      
+    
+        <div class="profile_img">
+            <% if (rows[0].image) { %>
+            <img src="/<%=rows[0].image%>">
+            <% } else { %>
+                <img src="./uploadimages/default_p.png">
+                <% } %>
+        </div>
+    </div> 
+        
+
+    <div class="pofile">
+   
+
+        <div class="profile_name"> 
+           <%=rows[0].nickname%>
+        </div>
+
+        <div class="profile_view">
+            <div class="profile_view_item">
+            <div class="post_view_num"><%=cnt%></div>
+            <div class="post_view_title">게시물</div>
+            </div>
+            <div class="profile_view_item">
+            <div class="follow_view_num">0</div>
+            <div class="follow_view_title">팔로워</div>
+            </div>
+            <div class="profile_view_item">
+            <div class="following_view_num">0</div>
+            <div class="following_view_title">팔로잉</div>
+            </div>
+        </div>
+
+        <div class="profile_text">
+             <div class="profile_text_box">
+                <% if (rows[0].content) { %>
+                    <%=rows[0].content%>
+                    <% } else { %>
+                        <p>기본 프로필</p>
+                        <% } %>
+            </div>
+        </div>
+     </div>   
+
+    <div class="mypost">
+        <div class="mypost_title">
+            <div class="mypost_title_item">게시물</div>
+        </div>
+    
+        <div class="content_box">
+            <%
+            for(var i=0;i<rows.length;i++)
+            {
+                var data = rows[i];
+                %>
+            <div class="content">
+                <% if (data.img) { %>
+                    <a href="/mentoView/<%=rows[i].m_idx%>">
+                <img src="<%=data.img%>" alt="" >
+                <% } else { %>
+                    <img src="./uploadimages/default_w.png" alt="" >
+                <% } %>
+               
+                <div class="content_title">
+                    <div>  <%=data.title%></a></div>
+                </div>
+            </div>
+            <%}%>
+        </div>
+      
+    </div>
+  
+
+    <footer>
+        <ul class="bottom_bar">
+          <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+          <li><a href="/post"><i class="fa-solid fa-rectangle-list"></i></a></li>
+          <li><a href="/music_list"><i class="fa-solid fa-music"></i></a></li>
+          <li><a href="/chat"><i class="fa-solid fa-comment"></i></a></i>
+          <li><a href="/myinfo"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+  
+function showLeftMenu(){
+    var circleBtObj = document.getElementById('circleBt');
+    var leftMenuObj = document.getElementById('hideMenuBodyId');
+    var backMenuObj = document.getElementById('back_icon');
+
+    backMenuObj.style['display']="block";
+    circleBtObj.style['display'] = "none";
+    leftMenuObj.style['transform'] = "translate(0px, 0px)";
+    
+    leftMenuObj.style['msTransform'] = "translate(0px, 0px)";
+    leftMenuObj.style['mozTransform'] = "translate(0px, 0px)";
+    leftMenuObj.style['webkitTransform'] = "translate(0px, 0px)";
+    leftMenuObj.style['oTransform'] = "translate(0px, 0px)";
+}
+
+function closeLeftMenu() {
+    var circleBtObj = document.getElementById('circleBt');
+    var leftMenuObj = document.getElementById('hideMenuBodyId');
+    var backMenuObj = document.getElementById('back_icon');
+
+    backMenuObj.style['display']="none";
+    circleBtObj.style['display'] = "block";
+    leftMenuObj.removeAttribute("style");
+}
+
+    </script>
+</body>
+</html>

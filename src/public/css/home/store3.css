@@ -1,0 +1,73 @@
+@import url("./style.css");
+
+
+header{
+  display:flex;
+  justify-content:space-between;
+  margin:var(--margin-small);
+  font-size: var(--font-large);
+  font-weight: bold;
+  color:rgb(0, 0, 0)
+}
+.return {
+  flex-grow: 1;
+  padding-left: 12px;
+}
+
+.top_text {
+  flex-grow: 1;
+  padding-right: 12px;
+}
+
+
+button{
+  cursor: pointer;
+}
+
+.nav_bar {
+  border-bottom: 3px solid rgb(194, 194, 194);
+  margin-top: 1.5em;
+}
+
+.nav_title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.nav_title li {
+  padding: 12px;
+}
+
+.nav_title li:hover {
+  border-bottom: 3px solid blue;
+  font-weight: bold;
+}
+.premium_starring{
+  display:flex;
+  justify-content: center;
+}
+
+.premium_starring img{
+  margin: 22px 0 11px 0px;
+  max-width: 350px;
+}
+ul li ul{
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 3px;
+}
+ul li ul li{
+  font-size:14px;
+  padding:20px;
+  font-weight: bold;
+}
+ul li ul li button{
+  padding:5px;
+  font-weight: bold;
+  border:none;
+  background-color: antiquewhite;
+  border-radius: 3px;
+}

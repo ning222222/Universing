@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/69bf24ab9c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/home/chatting.css" />
+    <title>UNIVERSING</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="user-container">
+        <label for="nickname" onclick="history.back();"><i class="fa-solid fa-arrow-left"></i></label>
+        <span> 설윤</span>
+      </div>
+      <div class="display-container">
+        <ul class="chatting-list">
+          <li class="sent">
+            <span class="profile">
+              <img src="imgs/man1.jpg" class="image" />
+            </span>
+            <span class="message">안녕</span>
+            <span class="time">오후 2:10</span>
+          </li>
+
+          <li class="received">
+            <span class="profile">
+              <img src="imgs/man2.jpg" class="image" />
+            </span>
+            <span class="message">그래 반가워</span>
+            <span class="time">오후 2:10</span>
+          </li>
+        </ul>
+      </div>
+      <div class="input-container">
+        <span>
+          <input type="text" class="chatting-input" />
+          <i class="fa-regular fa-face-smile"></i>
+          <button class="send-button">
+            <i class="fa-regular fa-paper-plane"></i>
+          </button>
+        </span>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/chat.js"></script>
+  </body>
+</html>

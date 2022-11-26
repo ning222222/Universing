@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/home/vocalResult.css" />
+
+  <title>UNIVERSING</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="mainTitle">AI추천장르</div>
+    <div class="resultTitle"><%=rows[0].predict_genre%></div>
+  </header>
+
+  <div class="result">
+    <img src="imgs/<%=rows[0].music_image%>" alt="" class="singImg" />
+    <div class="singInfo"><%=rows[0].music_name%> / <%=rows[0].music_singer%></div>
+    <div class="vocalTip">
+      <%=rows[0].ment%> <br /><br />
+        <b>당신에게 어울리는 노래는</b><br />
+        <%
+        for(var i=0;i<2;i++)
+        {
+            var data = rows2[i];
+            %>
+        <%=data.music_name%> - <%=data.music_singer%><br />
+    <%}%>
+  </div>
+    <div id="skills" class="section">
+      <div class="section__container">
+        <div class="skillset">
+          <div class="skillset__left">
+            <h3 class="skillset__title">회원님에게 어울리는 장르</h3>
+            <div class="skill">
+              <div class="skill__description">
+                <span><%=rows[0].predict_genre%></span>
+                <span id="s3text"></span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 99%;" id="s3"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span id="genre01"></span>
+                <span id="s0text"></span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" id="s0" style="width: 90%;"></div>
+              </div>
+            </div>
+            <div class="skill s1">
+              <div class="skill__description">
+                <span id="genre02"></span>
+                <span id="s1text"></span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 90%;" id="s1"></div>
+              </div>
+            </div>
+            <div class="skill s2">
+              <div class="skill__description">
+                <span id="genre03"></span>
+                <span id="s2text"></span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 80%;" id="s2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="btnBox">
+    <button class="return" onclick="location.href='music_list'">
+      다시부르기
+    </button>
+    <form action="/custom_matching" method="post">
+    <button class="mentoFind">
+      <input type="hidden" name="test" value="<%=rows2[0].predict_genre%>" >
+      추천멘토
+    </button>
+    </form>
+    <!-- <button onclick="location.href='vocalwave'">
+        파형보기
+      </button> -->
+  </div>
+
+  <script>
+    //값 랜덤
+    const arr = [
+      {
+        id: 1,
+        form: Math.floor(Math.random() * (100 - 91)) + 91,
+        htmlId: 's3'
+      },
+      {
+        id: 2,
+        form: Math.floor(Math.random() * (90 - 75)) + 75,
+        htmlId: 's0'
+      },
+      {
+        id: 3,
+        form: Math.floor(Math.random() * (74 - 60)) + 60,
+        htmlId: 's1'
+      },
+      {
+        id: 4,
+        form: Math.floor(Math.random() * (60 - 45)) + 45,
+        htmlId: 's2'
+      },
+
+    ]
+    for (let i = 0; i < arr.length; i++) {
+      const rand = arr[i].form
+      let progress = document.getElementById(`${arr[i].htmlId}`);
+      console.log(arr[i].htmlId)
+      let progressText = document.getElementById(`${arr[i].htmlId}text`);
+      progress.style.width = rand + '%';
+      progressText.innerText = rand + "%";
+
+    }
+
+    //장르 랜덤
+    const mainAry = ["pop", "metal", "disco", "blues", "ballade", "reggae", "classical", "rock", "hiphop", "country", "jazz"];
+    const aiGenre = `<%=rows[0].predict_genre%>` //분석 결과가 들어가면 됩니다.
+
+    const gArr =[
+      {
+        id : 1,
+        tag : 'genre01'
+      },
+      {
+        id : 2,
+        tag : 'genre02'
+      },
+      {
+        id : 3,
+        tag : 'genre03'
+      }
+    ]
+
+    for(let i=0; i<3 ; i++){
+      const fAry = mainAry.filter(v => v != aiGenre); //분석결과를 제외한 배열인 fAry
+    console.log(fAry)
+
+    //분석결과를 제외한 배열인 fAry에서 랜덤으로 하나 출력
+    const frand = fAry[Math.floor(Math.random() * fAry.length)];
+
+    let genre01 = document.getElementById(`${gArr[i].tag}`);
+    genre01.innerText = frand;
+
+    console.log(frand)
+    }
+
+    
+    const fAry = mainAry.filter(v => v != aiGenre); //분석결과를 제외한 배열인 fAry
+    console.log(fAry)
+
+    //분석결과를 제외한 배열인 fAry에서 랜덤으로 하나 출력
+    const frand = fAry[Math.floor(Math.random() * fAry.length)];
+
+    let genre01 = document.getElementById("genre01");
+    genre01.innerText = frand;
+
+    console.log(frand)
+
+    //frand 항목을 제외한 배열 fAry02
+    const fAry02 = fAry.filter(v => v != frand);
+    console.log(fAry02);
+
+    //다시 fAry02에서 랜덤값 뽑기
+    const frand02 = fAry02[Math.floor(Math.random() * fAry02.length)];
+    let genre02 = document.getElementById("genre02");
+    genre02.innerText = frand02;
+    console.log(frand02)
+
+    //제외하기..
+    const fAry03 = fAry02.filter(v => v != frand02);
+    console.log(fAry03);
+
+    //다시 fAry02에서 랜덤값 뽑기
+    const frand03 = fAry03[Math.floor(Math.random() * fAry03.length)];
+    let genre03 = document.getElementById("genre03");
+    genre03.innerText = frand03;
+    console.log(frand03)
+
+    //제외하기..
+    const fAry04 = fAry03.filter(v => v != frand03);
+    console.log(fAry04);
+
+  </script>
+</body>
+
+</html>

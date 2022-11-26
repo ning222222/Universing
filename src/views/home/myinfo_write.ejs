@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/69bf24ab9c.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="/css/home/myinfo_write.css">
+  <title>UNIVERSING</title>
+</head>
+<body>
+  
+  <header class="top_bar">
+    <div class="return" onclick="history.back();"><i class="fa-solid fa-angle-left"></i></div>
+    <div class="top_text">프로필 편집</div>
+    <div></div>
+  </header>
+<form action="/mypage_insert" method="post" enctype="multipart/form-data">
+<main>
+  <div class="photo_change">
+    <img src="./uploadimages/mark1661173417999.png">
+    </div >
+  <div class='change'>
+    <label for="img_btn">프로필 사진 변경</label>
+  <div class="del">
+  <a href="#" class="del_btn">삭제</a>
+  </div>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+  <input type="file" id="img_btn" name="image" accept="image/*" />
+</form>
+  </div>
+  <div class="introduce">
+    <div class="int">
+    소개
+  </div>
+   <textarea name="text" id="text" ></textarea>
+  </div>
+  <div class="sub_btn">
+    <input type="reset" value="취소">
+    <input type="submit" value="저장">
+  </div>
+
+</main>
+</form>
+<script>
+//document.addEventListener("DOMContentLoaded", function() {
+  $(document).ready(function() {
+
+
+function fileSelete(event){
+  var input = this;
+  if(input.files && input.files.length){
+    var reader = new FileReader();
+    this.enabled = false;
+    reader.onload=(function(e){
+      $('.photo_change').html(['<img class="thumb" src="', e.target.result, '" title="', '"/>'].join(''))
+    });
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$('#img_btn').change(fileSelete);
+//제이쿼리 문법에서 html 태그를 가져오는 방법이다.
+//$('지정자 태그명')가 바뀌면 fileSelete 함수를 호출한다.
+$('.del').on('click','.del_btn',function(){
+  $('.photo_change').empty()
+  $('#img_btn').val("");
+});
+
+var reset = document.getElementBy
+});
+
+</script>
+</body>
+</html>

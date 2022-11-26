@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home/resultGlaph.css">
+    <title>UNIVERSING</title>
+    <style>
+        section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">분석결과</div>
+    </header>
+
+    <section>
+        
+        <div>
+            <h4>당신이 부른 <%=music_name%>의 특징</h4>
+            <img src="/Data/images/<%=image%>" alt="" > <!--사용자..선명-->
+        </div>
+
+        <div>
+            <h4>원곡 <%=music_name%>의 특징</h4>
+            <img src="/Data/images/<%=ori_image%>" alt="" > <!--원곡..흐릿...-->
+        </div>
+    </section>
+    <footer>
+        <button onclick="location.href='vocalResult?p_idx=<%=p_idx%>&m_idx=<%=m_idx%>'">AI분석</button>
+    </footer>
+</body>
+</html>

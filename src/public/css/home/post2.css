@@ -1,0 +1,131 @@
+@import url("./style.css");
+
+header{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: var(--font-large) ;
+    font-weight: bold;
+}
+
+.commu_title{
+    margin-top: 24px;
+}
+
+.nav_title{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.nav_title li{
+    margin: var(--margin-small);
+}
+
+.sub_menu{
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+}
+
+.sub_menu li{
+    background-color: rgb(223, 223, 223);
+    padding: 6px 12px 6px 12px;
+    border-radius: 10px;
+}
+
+.search_and_filter{
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--margin-large);
+    align-items: center;
+}
+.filter_name{
+    display: flex;
+    font-size: 12px;
+}
+
+.filter_name li{
+    margin: 0 2px 0 12px;
+}
+
+.search_bar{
+    display: flex;
+}
+
+.search_bar div {
+    margin: 0 12px 0 6px;
+}
+
+.post{
+    border: 1px solid var(--gray-color);
+    margin: 12px;
+}
+
+.post_head{
+    display: flex;
+    justify-content: space-between;
+    margin: 12px;
+    font-weight: bold;
+}
+
+.post_time{
+    font-size: 12px;
+}
+
+.post_body{
+    font: 12px;
+    margin: 12px;
+    display:-webkit-box; 
+    word-wrap:break-word; 
+    -webkit-line-clamp:3; 
+    -webkit-box-orient:vertical; 
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    height:100%;
+}
+
+.post_button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.post_view{
+    display: flex;
+    margin: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.post_view li{
+    margin-right: 12px;
+}
+
+.post_btn{
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+}
+
+.post_btn div{
+    margin-left: 12px;
+}
+
+
+
+#buttonBox{
+    position : absolute;
+    top: -90px;
+    right: 20px;
+  }
+
+  #buttonBox button{
+      width: 70px;
+      height: 70px;
+      border-radius: 50px;
+      border: 0;
+      background-color: var(--pink-color);
+      cursor: pointer;
+  }

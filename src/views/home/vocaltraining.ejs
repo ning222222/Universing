@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <script src="/node_modules/recordrtc/RecordRTC.js"></script>
+  <script src="https://www.webrtc-experiment.com/common.js"></script>
+  <script src="https://kit.fontawesome.com/e0e0d61159.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/wavesurfer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
+
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+  <script src="//unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.microphone.min.js"></script>
+  <link rel="stylesheet" href="/css/home/vocaltraining.css">
+  <title>UNIVERSING</title>
+</head>
+
+<body>
+  
+  <div class="loader">
+    <i class='bx bx-loader bx-spin'></i>
+  </div>
+
+  <header>
+    <div class="title">
+      <%=rows.music_name%>
+    </div>
+    <div>
+      <%=rows.music_singer%>
+    </div>
+  </header>
+  <div class="wav">
+    <div id="waveform"></div>
+    <div id="waveform2"></div>
+  </div>
+  <div class="recording-btn">
+  <button id="startRecordingButton">녹음하기</button>
+  <button id="stopRecordingButton">녹음완료</button>
+  <button id="playButton">미리듣기</button>
+
+</div>
+<div class="music-lyrics" >
+  <%=rows.lyrics%>
+ </div>
+  <div class="result-recording">
+    <div style="visibility: hidden; height: 1px;">
+      
+      <audio controls autoplay playsinline></audio>microphone
+    </div>
+  <button id="downloadButton">Download</button>
+  <div>
+  <button id="btn-release-" disabled>초기화</button>
+  <form action="/uploadFile" enctype="multipart/form-data" method="post">
+    <div style="display: none">
+      <input name="category" type="text" value="<%=rows.music_genre%>" />
+      <input name="c_code" type="text" value="<%=rows.c_code%>" />
+      <input name="m_idx" type="text" value="<%=rows.m_idx%>" />
+      <input name="ori_image" type="text" value="<%=rows.wave_img%>" />
+      <input name="music_name" type="text" value="<%=rows.music_name%>" />
+    </div>
+  </div>
+    <div class="final-btn">
+      <input id="btn-file-recording" type="file" name="video" />
+      <button id="btn-upload-recording" type="submit" class="btn btn-primary">
+        <i class="fa-solid fa-square-poll-vertical"></i> 분석하기
+      </button>
+    </div>
+    </form> 
+  
+<script>
+var audio = document.querySelector('audio')
+let contex02, processor
+context02 = new AudioContext();
+processor = context02.createScriptProcessor(1024, 1, 1);
+
+var wavesurfer = WaveSurfer.create({
+container: '#waveform',
+barWidth: 5,
+waveColor: 'pink',
+progressColor: 'hotpink',
+});
+var wavesurfer2 = WaveSurfer.create({
+container: '#waveform2',
+barWidth: 5,
+waveColor: '#D2EDD4',
+progressColor: '#46B54D',
+audioContext: context02 || null,
+audioScriptProcessor: processor || null,
+plugins: [WaveSurfer.microphone.create()]
+
+});
+wavesurfer.load('video/<%=rows.music_files%>');
+wavesurfer2.microphone.on('deviceReady', function () {
+console.info('Device ready!');
+});
+
+//미디어 스트림 불러오기
+function captureMicrophone(callback) {
+btnReleaseMicrophone.disabled = false
+
+if (microphone) {
+  callback(microphone)
+  return
+}
+
+if (
+  typeof navigator.mediaDevices === 'undefined' ||
+  !navigator.mediaDevices.getUserMedia
+) {
+  alert('This browser does not supports WebRTC getUserMedia API.')
+
+  if (!!navigator.getUserMedia) {
+    alert('This browser seems supporting deprecated getUserMedia API.')
+  }
+}
+
+navigator.mediaDevices
+  .getUserMedia({
+    audio: isEdge
+      ? true
+      : {
+        echoCancellation: false,
+      },
+  })
+  .then(function (mic) {
+    callback(mic)
+  })
+  .catch(function (error) {
+    alert('Unable to capture your microphone. Please check console logs.')
+    console.error(error)
+  })
+}
+
+function replaceAudio(src) {
+var newAudio = document.createElement('audio')
+newAudio.controls = true
+newAudio.autoplay = true
+
+if (src) {
+  newAudio.src = src
+}
+
+var parentNode = audio.parentNode
+parentNode.innerHTML = ''
+parentNode.appendChild(newAudio)
+
+audio = newAudio
+}
+
+    var btnFileRecording = document.getElementById('btn-file-recording')
+    var btnUploadRecording = document.getElementById('btn-upload-recording')
+    const BLUR_LEVELS = 4
+    const MAX_BLUR = 2
+    const VERSE_INTERVAL = 2500
+
+    var startRecordingButton = document.getElementById("startRecordingButton");
+    var stopRecordingButton = document.getElementById("stopRecordingButton");
+    var playButton = document.getElementById("playButton");
+    var downloadButton = document.getElementById("downloadButton");
+
+
+    var leftchannel = [];
+    var rightchannel = [];
+    var recorder = null;
+    var recordingLength = 0;
+    var volume = null;
+    var mediaStream = null;
+    var sampleRate = 90000;
+    var context = null;
+    var blob = null;
+
+    startRecordingButton.addEventListener("click", function () {
+
+      // Initialize recorder
+      navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+      navigator.getUserMedia(
+        {
+          audio: true
+        },
+        function (e) {
+          console.log("user consent");
+
+          // creates the audio context
+          window.AudioContext = window.AudioContext || window.webkitAudioContext;
+          context = new AudioContext();
+
+          // creates an audio node from the microphone incoming stream
+          mediaStream = context.createMediaStreamSource(e);
+
+          // https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createScriptProcessor
+          // bufferSize: the onaudioprocess event is called when the buffer is full
+          var bufferSize = 2048;
+          var numberOfInputChannels = 2;
+          var numberOfOutputChannels = 2;
+          if (context.createScriptProcessor) {
+            recorder = context.createScriptProcessor(bufferSize, numberOfInputChannels, numberOfOutputChannels);
+          } else {
+            recorder = context.createJavaScriptNode(bufferSize, numberOfInputChannels, numberOfOutputChannels);
+          }
+
+          recorder.onaudioprocess = function (e) {
+            leftchannel.push(new Float32Array(e.inputBuffer.getChannelData(0)));
+            rightchannel.push(new Float32Array(e.inputBuffer.getChannelData(1)));
+            recordingLength += bufferSize;
+          }
+
+          // we connect the recorder
+          mediaStream.connect(recorder);
+          recorder.connect(context.destination);
+        },
+        function (e) {
+          console.error(e);
+        });
+      replaceAudio();
+      wavesurfer.playPause();
+      wavesurfer2.microphone.start();
+    });
+
+    stopRecordingButton.addEventListener("click", function () {
+      
+      
+      wavesurfer.stop();
+      wavesurfer2.microphone.stop();
+
+      // stop recording
+      recorder.disconnect(context.destination);
+      mediaStream.disconnect(recorder);
+
+      // we flat the left and right channels down
+      // Float32Array[] => Float32Array
+      var leftBuffer = flattenArray(leftchannel, recordingLength);
+      var rightBuffer = flattenArray(rightchannel, recordingLength);
+      // we interleave both channels together
+      // [left[0],right[0],left[1],right[1],...]
+      var interleaved = interleave(leftBuffer, rightBuffer);
+
+      // we create our wav file
+      var buffer = new ArrayBuffer(44 + interleaved.length * 2);
+      var view = new DataView(buffer);
+
+      // RIFF chunk descriptor
+      writeUTFBytes(view, 0, 'RIFF');
+      view.setUint32(4, 44 + interleaved.length * 2, true);
+      writeUTFBytes(view, 8, 'WAVE');
+      // FMT sub-chunk
+      writeUTFBytes(view, 12, 'fmt ');
+      view.setUint32(16, 16, true); // chunkSize
+      view.setUint16(20, 1, true); // wFormatTag
+      view.setUint16(22, 2, true); // wChannels: stereo (2 channels)
+      view.setUint32(24, sampleRate, true); // dwSamplesPerSec
+      view.setUint32(28, sampleRate * 4, true); // dwAvgBytesPerSec
+      view.setUint16(32, 4, true); // wBlockAlign
+      view.setUint16(34, 16, true); // wBitsPerSample
+      // data sub-chunk
+      writeUTFBytes(view, 36, 'data');
+      view.setUint32(40, interleaved.length * 2, true);
+
+      // write the PCM samples
+      var index = 44;
+      var volume = 1;
+      for (var i = 0; i < interleaved.length; i++) {
+        view.setInt16(index, interleaved[i] * (0x7FFF * volume), true);
+        index += 2;
+      }
+
+      // our final blob
+      blob = new Blob([view], { type: 'audio/wav' });
+    });
+
+    playButton.addEventListener("click", function () {
+      if (blob == null) {
+        return;
+      }
+
+      var url = window.URL.createObjectURL(blob);
+      var audio = new Audio(url);
+      audio.play();
+    });
+
+    downloadButton.addEventListener("click", function () {
+      if (blob == null) {
+        return;
+      }
+
+      var url = URL.createObjectURL(blob);
+
+      var a = document.createElement("a");
+      document.body.appendChild(a);
+      a.style = "display: none";
+      a.href = url;
+      a.download = "sample.wav";
+      a.click();
+      window.URL.revokeObjectURL(url);
+    });
+
+    function flattenArray(channelBuffer, recordingLength) {
+      var result = new Float32Array(recordingLength);
+      var offset = 0;
+      for (var i = 0; i < channelBuffer.length; i++) {
+        var buffer = channelBuffer[i];
+        result.set(buffer, offset);
+        offset += buffer.length;
+      }
+      return result;
+    }
+
+    function interleave(leftChannel, rightChannel) {
+      var length = leftChannel.length + rightChannel.length;
+      var result = new Float32Array(length);
+
+      var inputIndex = 0;
+
+      for (var index = 0; index < length;) {
+        result[index++] = leftChannel[inputIndex];
+        result[index++] = rightChannel[inputIndex];
+        inputIndex++;
+      }
+      return result;
+    }
+
+    function writeUTFBytes(view, offset, string) {
+      for (var i = 0; i < string.length; i++) {
+        view.setUint8(offset + i, string.charCodeAt(i));
+      }
+    }
+
+    function getFileName(fileExtension) {
+      var d = new Date()
+      var year = d.getFullYear()
+      var month = d.getMonth()
+      var date = d.getDate()
+      return (
+        'RecordRTC-' +
+        year +
+        month +
+        date +
+        '-' +
+        getRandomString() +
+        '.' +
+        fileExtension
+      )
+    }
+
+    function SaveToDisk(fileURL, fileName) {
+      // for non-IE
+      if (!window.ActiveXObject) {
+        var save = document.createElement('a')
+        save.href = fileURL
+        save.download = fileName || 'unknown'
+        save.style = 'display:none;opacity:0;color:transparent;'
+          ; (document.body || document.documentElement).appendChild(save)
+
+        if (typeof save.click === 'function') {
+          save.click()
+        } else {
+          save.target = '_blank'
+          var event = document.createEvent('Event')
+          event.initEvent('click', true, true)
+          save.dispatchEvent(event)
+        }
+
+        ; (window.URL || window.webkitURL).revokeObjectURL(save.href)
+      }
+
+      // for IE
+      else if (!!window.ActiveXObject && document.execCommand) {
+        var _window = window.open(fileURL, '_blank')
+        _window.document.close()
+        _window.document.execCommand('SaveAs', true, fileName || fileURL)
+        _window.close()
+      }
+    }
+
+    btnUploadRecording.onclick = function () {
+      var fileCheck = document.getElementById("btn-file-recording").value;
+      if (!fileCheck) {
+        alert("파일을 선택해주세요");
+        return false;
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+@import url("./style.css");
+
+header{
+    display:flex;
+    justify-content:space-between;
+    margin:var(--margin-small);
+    font-size: var(--font-large);
+    font-weight: bold;
+    color:rgb(0, 0, 0)
+  }
+  .return {
+    flex-grow: 1;
+    padding-left: 12px;
+  }
+  
+  .top_text {
+    flex-grow: 1;
+    padding-right: 12px;
+  }
+  
+.detailpage_head{
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin: 24px;
+}
+
+.detailpage_head .title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.icons i{
+    margin-left: 6px;
+}
+
+.detailpage_preview{
+    margin: 24px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.detailpage_preview img{
+    width: 100%;
+}
+
+.mainImg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+ 
+}
+.mainImg img{
+    max-width: 500px;
+    width: 100%;
+    height:300px;
+    object-fit: cover;
+
+}
+
+.detail_img{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.img2{
+    margin: 0 12px 0 12px;
+}
+
+.preview_text .title{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.mentoInfo{
+    display: flex;
+    margin-top: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mentoImg{
+    display: flex;
+    align-items: center;
+}
+
+.mentoName{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.mentoImg div{
+    margin-left: 12px;
+    text-align:center;
+    margin-bottom:2px;
+}
+.mentoImg div i{
+    font-size: 22px;
+    color: rgb(255, 185, 189);
+}
+
+.mentoInfo img{
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+}
+
+.mentoInfoBtn{
+    width: 100px;
+    height: 30px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--pink-color);
+    font-weight: bold;
+}
+
+.classPrice{
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding-bottom: 24px;
+    border-bottom: solid 1px rgb(184, 184, 184);
+}
+
+.detailpage_body{
+    margin: 24px 24px 120px 24px;
+    align-items: center;
+}
+
+.detailpage_body .title{
+    font-size: 24px;
+    font-weight: bold;
+}
+.detailpage_body img{
+    width: 100%;
+}
+.detailpage_body .body{
+    margin-top: 24px;
+}
+
+.detailpage_body .text{
+    text-align: center;
+    margin:  24px 0 24px 0;
+    font-family: 600;
+    line-height: 3;
+}
+
+.totalBtn{
+    display: flex;
+    justify-content: space-between;
+    margin: 12px;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.icons .like-btn{
+    width: 44px;
+    height: 30px;
+}
+
+.btn{
+    font-size: 14px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.btn button{
+    margin-left: 12px;
+    width: 100px;
+    padding: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.btn2{
+    background: var(--pink-color);
+}
+footer{
+    border-top: 3px solid rgb(194, 194, 194);
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media all and (min-width:800px)  { 
+
+    .mainImg img{
+        width: 400px;
+        justify-content: center;
+    }
+    .preview_img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .detail_img{
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+    }
+    
+    .detail_img img{
+        width: 200px;
+    }
+  } 
+  .like-btn{
+    background: url('/imgs/emp-heart.png');
+    background-repeat: no-repeat;
+    background-size:30px;
+    Cursor: pointer;
+    margin-top:5px;
+    align-items: center;
+  }
+  
+  .like-btn {
+    /* background: url('https://i.ibb.co/vw78mf3/heart.png') no-repeat 0% 50%;
+    background-size: 2900%; */
+  }
+  .like-active {
+    animation-name: animate;
+    animation-duration: .8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  .like-active {
+    animation-timing-function: steps(28);
+  }
+  @keyframes animate {
+    0%   { background-position: left;  }
+    50%  { background-position: right; }
+    100% { background-position: right; }
+  }
+  .like-btn.check{
+    background: url('/imgs/heart.png');
+    background-repeat: no-repeat;
+    background-size:30px;
+  }
+  .like-btn{
+
+   
+  }

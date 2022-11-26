@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script language="javascript">
+      prog_sec = 1 // Prosess time
+      length_bar = 1 // Bar length
+      cnt_img = 2 // Number of image
+      width_img = length_bar / cnt_img // width of image
+      height_img = 8 // height of image
+
+      var chk_cnt = 0
+      var prog_per = 0
+      var time_unit = (prog_sec * 1000) / cnt_img
+
+      function progress() {
+        if (chk_cnt < cnt_img) {
+          document.images['prog_img' + chk_cnt].src =
+            'http://www.script.ne.kr/image/upload/icon/prog_bar.gif'
+          chk_cnt++
+
+          prog_per = Math.round((chk_cnt / cnt_img) * 100)
+          if (document.all) {
+            // ie4+
+            document.all.prog_num.innerHTML = prog_per + '%'
+          } else if (document.getElementById) {
+            // nn6+
+            document.getElementById('prog_num').innerHTML = prog_per + '%'
+          }
+
+          if (chk_cnt == cnt_img) {
+            window.location.replace('vocalwave?w_idx=<%-w_idx%>')
+          }
+          setTimeout('progress();', time_unit)
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="./css/home/vocalloding.css" />
+    <title>UNIVERSING</title>
+  </head>
+  <body onLoad="progress();">
+    <script language="javascript">
+      for (i = 0; i < cnt_img; i++) {
+        document.write(
+          '<img src=http://www.script.ne.kr/image/upload/icon/prog_bg.gif width=' +
+            width_img +
+            ' height=' +
+            height_img +
+            ' name=prog_img' +
+            i +
+            ' border=0>'
+        )
+      }
+    </script>
+    <div id="prog_num" class="small"></div>
+    <img src="imgs/vocalloding.gif" class="img_loding" />
+    <div class="loding_text">결과를 작성중 입니다.</div>
+  </body>
+</html>

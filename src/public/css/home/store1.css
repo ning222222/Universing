@@ -1,0 +1,98 @@
+@import url("./style.css");
+header{
+  display:flex;
+  justify-content:space-between;
+  margin:var(--margin-small);
+  font-size: var(--font-large);
+  font-weight: bold;
+  color:rgb(0, 0, 0)
+}
+.return {
+  flex-grow: 1;
+  padding-left: 12px;
+}
+
+.top_text {
+  flex-grow: 1;
+  padding-right: 12px;
+}
+
+
+.nav_bar {
+  border-bottom: 1px solid var(--gray-color);
+  margin-top: 24px;
+}
+
+.nav_title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.nav_title li {
+  padding:12px;
+}
+
+.nav_title li:hover {
+  border-bottom: 3px solid blue;
+  font-weight: bold;
+}
+
+.sell_starring {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my_starring {
+  float: right;
+  margin:12px 24px 0px 0px;
+}
+
+.free_starring {
+ margin: 24px;
+}
+
+.free_starring button {
+  width: 100%;
+  height: 87px;
+  background: linear-gradient(180deg, #FFD7F4 0%, rgba(232, 213, 237, 0.66) 49.48%, #FFFFFF 100%);
+  border-radius: 10px;
+  border: #000000;
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(61, 61, 61);
+  margin: 10px 0 10px 0;
+}
+.sell_starring{
+  margin:36px;
+}
+.list i{
+  color:yellow;
+  font-size:25px;
+}
+.list{
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0 12px 0;
+  align-items: center;
+  justify-self: center;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  width:100%; 
+}
+
+
+.list_1{
+  flex:0;
+  margin-right: 10px;
+}
+.list_2{
+  flex:1;
+}
+.list_3{
+  flex:0;
+  white-space:nowrap;
+}

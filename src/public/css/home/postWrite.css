@@ -1,0 +1,61 @@
+@import url("./style.css");
+
+
+
+header{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 12px 0px 12px 0px;
+}
+
+form{
+    text-align: center;
+}
+
+.commu_title{
+    width: 100%;
+    height: 25px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.postTitle{
+    font-size: 12px;
+    width: 90%;
+    height: 25px;
+    margin-top: 12px;
+}
+
+
+.postSelect{
+    font-size: 12px;
+    width: 90%;
+    height: 25px;
+    margin-top: 12px;
+}
+
+.postContent{
+    font-size: 12px;
+    width: 90%;
+    height: 300px;
+    margin-top: 12px;
+}
+
+.btnBox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 12px;
+}
+
+.cancleBtn, .uploadBtn {
+    margin: 12px 6px 12px 6px;
+    width: 100px;
+    height: 30px;
+}
+
+
+ 

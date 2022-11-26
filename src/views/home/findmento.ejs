@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e0e0d61159.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/home/mento.css">
+
+    <title>UNIVERSING</title>
+</head>
+<body>
+
+    <div class="navbar__menu">
+        <div class="title">상세검색</div>
+        <div><input type="checkbox"> 전체</div>
+        <div><input type="checkbox"> 3만원이하</div>
+        <div><input type="checkbox"> 3~5만원이하</div>
+        <hr>
+        <div><input type="checkbox"> 스케쥴협의가능</div>
+        <hr>
+        <div><input type="checkbox"> 우주대스타 출신</div>
+    </div>
+
+    <header>
+        <div class="backBtn">
+            <i class="fa-solid fa-angle-left" onclick="history.back();"></i>
+        </div>
+        <div class="mento_title">
+            추천 멘토 리스트
+        </div>
+
+    </header>
+
+    <section>
+        <div class="search">
+            <input type="text" id="searchBar" name="searchBar" class="searchBar" placeholder="검색어를 입력하세요.">
+          
+            <div class="navbar__toggle-btn">상세조건</div>
+        </div>
+        <div class="mentoList">
+            <div class="mentoList_head">
+                <div class="searchResult">
+                    검색결과 200
+                </div>
+                <div class="mapIcon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+            </div>
+            <div class="mentoList_body">
+                <div class="mentoList_View">
+                    <div class="mentoImg">
+                        <img src="imgs/man1.jpg" alt="">
+                    </div>
+                    <div class="mentoListText">
+                        <div class="title">보컬전문가 김채린</div>
+                        <div class="text">안녕하세요! 보컬 전문가 김채린입니다! 저는 우주대스타 최다 우승자이고 용인에서 보컬트레이닝을 운영하고있습니다. 노래를 잘 부르고싶으신가요? 그렇다면 연락주세요!</div>
+                        <div class="review"> <i class="fa-solid fa-star"></i> 5.0(200)</div>
+                    </div>
+                </div>
+
+                <div class="mentoList_View">
+                    <div class="mentoImg">
+                        <img src="imgs/women1.jpg" alt="">
+                    </div>
+                    <div class="mentoListText">
+                        <div class="title">걸스힙합 전문 전애란</div>
+                        <div class="text">춤을 잘 추고싶은데 고민이신가요? 그렇다면 걸스힙합 전문가인 저를 찾아오세요! 몸치, 박치라 걱정이 많으신가요? 저의 다양한 노하우를 통해 당신의 고민을 해결해드릴게요! </div>
+                        <div class="review"> <i class="fa-solid fa-star"></i> 5.0(150)</div>
+                    </div>
+                </div>
+
+
+                <div class="mentoList_View">
+                    <div class="mentoImg">
+                        <img src="imgs/women2.jpg" alt="">
+                    </div>
+                    <div class="mentoListText">
+                        <div class="title">팝핀댄스 전문 문빛채운</div>
+                        <div class="text">안녕하세요! 고척동에서 댄스트레이닝을 교육하고있습니다. 팝핀댄스 전문이구요, 그 외에도 다양한 댄스강의가 가능합니다. 각 종 대회에서 1등을 한 경력이 있습니다. 자세한 문의는 채팅으로 남겨주세요.</div>
+                        <div class="review"> <i class="fa-solid fa-star"></i> 5.0(200)</div>
+                    </div>
+                </div>
+
+
+                <div class="mentoList_View">
+                    <div class="mentoImg">
+                        <img src="imgs/man2.jpg" alt="">
+                    </div>
+                    <div class="mentoListText">
+                        <div class="title">발라드 전문 유다인</div>
+                        <div class="text">안녕하세요. 안양에서 보컬트레이닝 학원을 운영 중인 유다인입니다. 보컬 트레이닝 외에도 작곡,작사 수업도 운영 중입니다. 많은 관심 부탁드려요.</div>
+                        <div class="review"> <i class="fa-solid fa-star"></i> 5.0(200)</div>
+                    </div>
+                </div>
+
+                <div class="mentoList_View">
+                    <div class="mentoImg">
+                        <img src="imgs/women3.jpg" alt="">
+                    </div>
+                    <div class="mentoListText">
+                        <div class="title">랩/힙합 전문가 김예린</div>
+                        <div class="text"> 안녕하세요 제 10회 우주대스타 최종 우승자 김예린입니다. 그 외에도 다양한 경력이 있습니다. 동양음대 출신이며 섬세한 티칭으로 여러분을 힙합/랩의 고수로 만들어드리겠습니다.</div>
+                        <div class="review"> <i class="fa-solid fa-star"></i> 5.0(200)</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        <ul class="bottom_bar">
+            <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="/post"><i class="fa-solid fa-rectangle-list"></i></a></li>
+            <li><a href="/music_list"><i class="fa-solid fa-music"></i></a></li>
+            <li><a href="/chat"><i class="fa-solid fa-comment"></i></a></i>
+            <li><a href="/myinfo"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
+    </footer>
+
+
+    <script>
+        // Handle scrolling when tapping on the navbar menu
+const navbarMenu = document.querySelector('.navbar__menu');
+navbarMenu.addEventListener('click', (event) => {
+  const target = event.target;
+  const link = target.dataset.link;
+  if (link == null) {
+    return;
+  }
+  navbarMenu.classList.remove('open');
+  scrollIntoView(link);
+});
+
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+  navbarMenu.classList.toggle('open');
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e0e0d61159.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/home/mentoInfo.css" />
+    <title>UNIVERSING</title>
+</head>
+<body>
+    <div class="myinfo">
+        <div class="myinfo_btn">
+            <div class="back_btn" onclick="history.back();">
+                <i class="fa-solid fa-angle-left"></i>
+            </div>
+            <div class="follow_chat_btn">
+                <div class="follow_btn">팔로우</div>
+                <div class="chat_btn" onclick="location.href='chat';">메시지</div>
+            </div>
+        </div>
+
+        <div class="profile_img">
+            <% if (rows[0].image) { %>
+                <img src="/<%=rows[0].image%>">
+                <% } else { %>
+                    <img src="./uploadimages/default_p.png">
+                    <% } %>
+        </div>
+    </div> 
+
+    <div class="pofile">
+        <div class="profile_name"> 
+           <span>  <%=rows[0].nickname%></span>
+           <span class="mento">멘토인증</span>
+        </div>
+
+        <div class="profile_view">
+            <div class="profile_view_item">
+            <div class="post_view_num">2</div>
+            <div class="post_view_title">게시물</div>
+            </div>
+            <div class="profile_view_item">
+            <div class="follow_view_num">0</div>
+            <div class="follow_view_title">팔로워</div>
+            </div>
+            <div class="profile_view_item">
+            <div class="following_view_num">0</div>
+            <div class="following_view_title">팔로잉</div>
+            </div>
+        </div>
+
+        <div class="profile_text">
+             <div class="profile_text_box">
+                <% if (rows[0].content) { %>
+                    <%=rows[0].content%>
+                    <% } else { %>
+                        <p>기본 프로필</p>
+                        <% } %>
+            </div>
+        </div>
+     </div>   
+
+    <div class="mypost">
+        <div class="mypost_title">
+            <div class="mypost_title_item">게시물</div>
+            <div class="mypost_title_item" onclick="location.href='/mento_reviw';">멘토리뷰</div>
+        </div>
+        <div class="content_box">
+            <%
+            for(var i=0;i<rows.length;i++)
+            {
+                var data = rows[i];
+                %>
+            <div class="content">
+                <% if (data.img) { %>
+                <img src="<%=data.img%>" alt="" >
+                <% } else { %>
+                    <img src="./uploadimages/default_w.png" alt="" >
+                <% } %>
+                <div class="content_title">
+                    <div>   <a href="/mentoView/<%=rows[i].m_idx%>"><%=data.title%></a></div>
+                </div>
+            </div>
+            <%}%>
+        </div>
+        
+         
+          
+            
+        </div>
+    </div>
+
+    <footer>
+        <ul class="bottom_bar">
+            <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="/post"><i class="fa-solid fa-rectangle-list"></i></a></li>
+            <li><a href="/music_list"><i class="fa-solid fa-music"></i></a></li>
+            <li><a href="/chat"><i class="fa-solid fa-comment"></i></a></i>
+            <li><a href="/myinfo"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
+    </footer>
+</body>
+</html>

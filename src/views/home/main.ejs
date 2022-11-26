@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e0e0d61159.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/home/main.css">
+    <title>UNIVERSING</title>
+</head>
+
+<body>
+    <header>
+        <a href="/login">
+            <div class="backBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </div>
+        </a>
+        <div class="title">
+            UNIVERCING
+        </div>
+        <div>
+
+            <!-- <i class="fa-solid fa-store"  onclick="location.href='store1';"></i> -->
+
+        </div>
+
+    </header>
+
+
+
+    <div class="token_name">
+        <%=rows[0].nickname%> 
+    </div>
+    <section>
+
+
+        <div class="banner">
+            <div class="section">
+
+                <input type="radio" name="slide" id="slide01" checked>
+                <input type="radio" name="slide" id="slide02">
+                <input type="radio" name="slide" id="slide03">
+
+                <div class="slidewrap">
+                    <ul class="slidelist">
+                        <li>
+                            <a>
+                                <label for="slide03" class="left"></label>
+                                <img src="./imgs/mainIMG.jpg">
+                                <label for="slide02" class="right"></label>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <label for="slide01" class="left"></label>
+                                <img src="./imgs/mainIMG2.jpg">
+                                <label for="slide03" class="right"></label>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <label for="slide02" class="left"></label>
+                                <img src="./imgs/mainIMG3.jpg">
+                                <label for="slide01" class="right"></label>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <!-- <div class="banner">
+            <img src="./imgs/mainIMG.png" alt="">
+        </div> -->
+
+            <div class="main_view">
+
+                <div class="unistar" onclick="location.href='audition';">
+                    <span class="crown"><i class="fa-solid fa-crown"></i></span>
+                    <span>유니버스타</span>
+                </div>
+                <div class="mento_and_vocal">
+                    <div class="matching_btn" onclick="location.href='mento';">
+                        <span>멘티/멘토 찾기</span>
+                        <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </div>
+                    <div class="al_vocal_btn" onclick="location.href='music_list';">
+                        <span>AI보컬 트레이닝</span>
+                        <span><i class="fa-solid fa-microphone"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="music_chart">
+            <div class="chart_head">
+                <div class="chart_in">
+                <div class="chart_head_title">추천 노래 차트
+                </div>
+                <div class="chart_head_btn" onclick="location.href='music_list';">
+                    <span>더보기</span>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+            </div>
+
+
+           
+                <% for(var i=1;i<6;i++) { %> %>
+                   
+                    <% var data=rows[i]; %>
+               
+                        <div class="chart_main">
+                            
+                            <div class="chart_view" onclick="location.href='vocaltraining?m_idx=<%=data.m_idx%>';">
+                                
+                                <div class="chart_box1" >
+                                    <img class=chart_item src="./imgs/<%=data.music_image%>" alt="" width="70px"
+                                        height="70pxs">
+                                    <div class="music_title">
+                                        <span class="chart_item" id="music_name">
+                                            <span>
+                                                <%=data.music_name%>
+                                            </span>
+                                            <span>
+                                                <%=data.music_singer%>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="record">
+                                    <li><i class="fa-solid fa-microphone"></i></li>
+                                </div>
+
+                            </div>
+                        </div>
+                    <%}%>
+
+            </div>
+        </div>
+        </div>
+        </div>
+        <div class="pop_video">
+            <div class="video_title"> 멘토 추천 리스트 </div>
+            <div class="video_view">
+                <div class="video_text">
+                    <div class="video_text_title">멘토를<br>찾으시나요?</div>
+                    <div class="video_more" onclick="location.href='mento'">
+                        <span class="more_text">더보기</span>
+                        <span class="more_btn"><i class="fa-solid fa-caret-down"></i></span>
+                    </div>
+                </div>
+                <%
+                for(var i=0;i<3;i++)
+                {
+                    var data = rows2[i];
+                    %>
+                <div class="mentoView">
+                    <div class="mentoImg"><img src="<%=data.img%>" alt=""></div>
+                    <div class="mentoTitle">  <a href="/mentoView/<%=rows2[i].m_idx%>"><%=data.title%></a></div>
+                    <!-- <div class="mentoName">장원영</div> -->
+                </div>
+                <%}%>
+             
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <ul class="bottom_bar">
+            <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="/post"><i class="fa-solid fa-rectangle-list"></i></a></li>
+            <li><a href="/music_list"><i class="fa-solid fa-music"></i></a></li>
+            <li><a href="/chat"><i class="fa-solid fa-comment"></i></a></i>
+            <li><a href="/myinfo"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

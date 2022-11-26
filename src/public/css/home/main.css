@@ -1,0 +1,392 @@
+@import url("./style.css");
+
+header{
+    display:flex;
+    justify-content:space-between;
+    margin:var(--margin-small);
+    font-size: var(--font-large);
+    font-weight: bold;
+    color:rgb(0, 0, 0)
+  }
+  .return {
+    flex-grow: 1;
+    padding-left: 12px;
+  }
+  
+  .top_text {
+    flex-grow: 1;
+    padding-right: 12px;
+  }
+  
+  .main_menu{
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: var(--margin-large);
+    font-size: var(--font-medium);
+}
+.token_name{
+    display: flex;
+    justify-content: end;
+    margin: 0 16px 4px 12px;
+    font-weight: bold;
+}
+.main_menu li{
+    padding: 0 6px 0 6px;
+}
+
+.main_menu i:hover{
+    border-bottom: 3px solid rgb(17, 0, 255);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.section{
+    display: flex;
+    justify-content: center;
+    margin: 0 12px 12px 12px;
+    cursor: pointer;
+    /* max-width: 1000px; */
+}
+.section img{
+    width: 100%;
+    padding: 0;
+    border-radius: 10px;
+}
+
+.main_view{
+    display: flex;
+    margin: 12px;
+    height: 120px;
+    min-width: 100px;
+}
+
+.main_view span{
+    padding:6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.crown i{
+    font-size: 50px;
+    color: rgb(255, 216, 41);
+}
+
+.unistar{
+    background-color: rgb(227, 237, 255);
+    width: 55%;
+    margin-right: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mento_and_vocal{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin-left: 6px;
+    justify-content: center;
+}
+
+.matching_btn{
+    background-color: #fff0d0;
+    height: 50%;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.al_vocal_btn{
+    background-color: rgb(255, 211, 211);
+    height: 50%;
+    margin-top: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music_chart{
+    margin: 24px 12px 12px 0px;
+}
+
+.chart_head{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    font-size: 14px;
+    margin: 12px;
+}
+.chart_in{
+    margin-left: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.chart_in .chart_head_title{
+    font-size: 22px;
+    font-weight: 900;
+}
+.chart_item span:first-child{
+    font-weight: bold;
+    font-size: 12px;
+}
+.pop_video{
+    margin-bottom: 60px;
+}
+
+.chart_body{
+    display: flex;
+}
+
+.chart_view{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-right: 36px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.chart_group{
+    margin-right: 24px;
+    width: 100%;
+}
+
+.chart_box1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart_item{
+    margin: 6px;
+}
+
+
+.chart_head_btn{
+    cursor: pointer;
+}
+
+#music_name{
+    display: flex;
+    flex-direction: column;
+}
+
+.video_title{
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 6px;
+}
+
+video{
+    cursor: pointer;
+    width: 50%;
+    height: 50%;
+}
+
+.video_view{
+    display: flex;
+    background-color: rgb(227, 242, 255);
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.video_text{
+    font-size: 12px;
+    font-weight: bold;
+    margin: 12px;
+    width: 300px;
+}
+.video_text_title{
+    margin-bottom: 12px;
+    font-size: 18px;
+    width: 100%;
+}
+
+.mentoView{
+    width: 150px;
+    height: 100px;
+    margin: 12px;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.mentoImg img{
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+.mentoTitle{
+    margin-top: 12px;
+    font-size: 8px;
+    font-weight: bold;
+}
+/* .chart_main{
+    margin-top: 50px;
+} */
+.mentoText{
+    font-size: 6px;
+}
+
+/* .pop_video{
+    width: 100%;
+}
+
+video{
+    cursor: pointer;
+    width: 50%;
+    height: 50%;
+}
+
+.video_view{
+    display: flex;
+    background-color: rgb(227, 242, 255);
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.video_title{
+    margin: 24px 24px 12px 24px;
+    font-weight: bold;
+}
+
+.video_box{
+    display: flex;
+    width: 100%;
+}
+
+.video_text{
+    font-size: 12px;
+    font-weight: bold;
+    margin: 12px;
+    width: 300px;
+}
+.video_text_title{
+    margin-bottom: 12px;
+    font-size: 18px;
+    width: 100%;
+}
+
+.video_box video{
+    padding: 12px 12px 12px 0
+}
+
+
+.video_more{
+    cursor: pointer;
+} */
+
+.bottom_bar{
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 24px 12px 24px;
+    align-items: center;
+    padding: 0;
+    font-size: 24px;
+}
+.video_more{
+    cursor: pointer;
+}
+
+/* 슬라이드 배너 */
+* {margin:0;padding:0;}
+
+	.section{
+		position: relative;
+	} 
+	.section input[id*="slide"] {display:none;}
+	.section .slidewrap {max-width:100px;margin:0 auto;}
+	.section .slidelist {white-space:nowrap;font-size:0;overflow:hidden;position:relative;}
+	.section .slidelist > li {display:inline-block;vertical-align:middle;width:100%;transition:all .5s;}
+	.section .slidelist > li > a {display:block;position:relative;}
+	.section .slidelist > li > a img {width:100%;}
+	.section .slidelist label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
+	.section .slidelist .textbox {position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
+	.section .slidelist .textbox h3 {font-size:36px;color:#fff;;transform:translateY(30px);transition:all .5s;}
+	.section .slidelist .textbox p {font-size:16px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
+	
+	/* input에 체크되면 슬라이드 효과 */
+	.section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
+	.section input[id="slide02"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
+	.section input[id="slide03"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
+    
+    .slide-pagelist {
+        position: relative;
+    }
+
+	/* 광고배너 */
+    /* INPUT 가리기 */
+	.section input[id*="slide"] {display:none;}
+
+	/* 슬라이드 영역 - max-width 크기를 조절해주면 됩니다*/
+	.section .slidewrap {max-width:1200px;margin:0 auto;overflow:hidden;}
+	.section .slidelist {white-space:nowrap;font-size:0;}
+	.section .slidelist > li {display:inline-block;vertical-align:middle;width:100%;transition:all .5s;}
+	.section .slidelist > li > a {display:block;position:relative;}
+	.section .slidelist > li > a img {width:100%;}
+
+	/* 좌우로 넘기는 LABEL버튼에 대한 스타일 */
+	.section .slidelist label {position:absolute;z-index:1;top:50%;transform:translateY(-50%);padding:20px;cursor:pointer;}
+	.section .slidelist .left {left:5px;background:url('./imgs/left.png') center center / 100% no-repeat;}
+	.section .slidelist .right {right:5px;background:url('./imgs/right.png') center center / 100% no-repeat;}
+
+	/* INPUT 체크되면 변화값이 li까지 전달되는 스타일 */
+	.section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
+	.section input[id="slide02"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
+	.section input[id="slide03"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
+
+    @media (max-width: 800px) {
+        .chart_box1{
+            font-size: 14px;
+        }
+
+    }
+    @media (max-width: 600px) {
+        .chart_box1{
+            font-size: 12px;
+        }
+    }
+    /*
+    @media (min-width: 1000px){
+        .banner{
+            background-color: red;
+            display: flex;
+        }
+        .banner .main_view{
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+        .banner .main_view div{
+           width: 100%;
+           margin: 0;
+        }
+        
+
+    } */
+
+
+    .mentoTitle a{
+        font-size: 8px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* 라인수 */
+        -webkit-box-orient: vertical;
+        /* margin:0 5px; */
+        text-align: center;
+        text-overflow:ellipsis;
+    }

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/home/style.css" />
+    <link rel="stylesheet" href="/css/home/signupstyle.css" />
+    <script src="/js/home/register.js" defer></script>
+    <title>UNIVERSING</title>
+  </head>
+  <body>
+    <form name="login-form" method="post">
+      <header>
+        <div class="backBtn" >
+          <i class="fa-solid fa-angle-left" onclick="history.back();"></i>
+        </div>
+        <div class="singup_title">회원가입</div>
+      </header>
+      <main>
+        <!--회원가입 정보입력-->
+
+        <section class="login_info">
+          <!--로그인 정보-->
+          <div class="login_bar">회원가입 정보</div>
+          <div class="sort">
+            <div class="id_input">
+              <input id="email" type="email" placeholder="이메일 주소" />
+              <button type="button" onclick="overlapCheck('email')">
+                중복확인
+              </button>
+            </div>
+            <div class="name_input">
+              <input id="name" type="text" placeholder="이름 (실명 입력)" />
+            </div>
+            <div class="pw_input">
+              <input id="psword" type="password" placeholder="비밀번호" />
+              <div class="pw_attention">
+                *비밀번호는 8~25자리를 사용하며 영문과 숫자 특수문자를 포함해야
+                합니다.
+              </div>
+
+              <input
+                id="confirm-psword"
+                type="password"
+                placeholder="비밀번호 확인"
+              />
+            </div>
+            <div class="nickname_input">
+              <input id="nickname" type="text" placeholder="닉네임 입력" />
+              <button type="button" onclick="overlapCheck('nickname')">
+                중복확인
+              </button>
+            </div>
+          </div>
+          <div class="date_gender_input">
+            <input type="text" placeholder="생년월일 (8자리)" id="birth" />
+          </div>
+        </section>
+
+        <!-- <section class="member_info">
+       <div class="member_bar"
+        회원 정보
+      </div>
+      <div class="name_input">
+        <input type="text" placeholder="이름 (실명 입력)" id="name">
+      </div>
+      <div class="pnum_input_confirm">
+        <div>
+          <input type="text" placeholder="휴대전화번호 (' - ' 제외)" id="mobile">
+          <button>인증번호 전송</button>
+        </div>
+        <div>
+         <input type="text" platceholder="인증번호 입력">
+          <button>확인</button>
+        </div>
+      </div>
+      <div class="date_gender_input">
+        <input type="text" placeholder="생년월일 (8자리)" id="bir_day">
+        <span class="female_input"> <label><input type="radio" name="gender" id="female" checked> 여성 </label> </span> 
+        <span class="male_input"> <label><input type="radio" name="gender" id="male"> 남성 </label></span> 
+      </div> 
+    </section> -->
+        <section class="agree_info">
+          <!--개인정보동의-->
+          <div class="agree_bar">개인정보 동의</div>
+
+          <div class="agree_check">
+            <div>
+              <label
+                ><input type="checkbox" name="service" id="agr1" /> 이용약관
+                동의 >
+              </label>
+            </div>
+            <div>
+              <label
+                ><input type="checkbox" name="personal" id="agr2" /> 개인정보
+                취급 방침 동의 ></label
+              >
+            </div>
+            <div>
+              <label
+                ><input type="checkbox" name="marketing" id="agr3" /> 마케팅
+                정보 수신 동의 ></label
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="singup_btn">
+        <!--회원가입 완료-->
+        <button id="button" type="button" onclick="chkPW()">회원가입</button>
+      </footer>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+@import url("./style.css");
+
+header{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 12px 0px 12px 0px;
+}
+
+form{
+    text-align: center;
+}
+
+.postTitle {
+    width: 90%;
+    height: 25px;
+    margin: 12px 12px 6px 12px;
+}
+#jsselect select{
+    width: 90%;
+    height: 25px;
+    margin: 0 12px;
+    padding: 1px 2px;
+    font-size:12px ;
+
+}
+
+.postId{
+    width: 90%;
+    height: 25px;
+    margin: 12px;
+}
+
+.photoAndVideo{
+    display: flex;
+    margin-left: 18px;
+}
+
+.cameraBtn{
+    width: 40px;
+    height: 30px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.videoBtn{
+    width: 40px;
+    height: 30px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+#photoFile{
+    visibility: hidden;
+}
+
+#VideoUpload{
+    visibility: hidden;
+}
+
+
+
+.content{
+    width: 90%;
+    height: 300px;
+    margin: 12px;
+}
+
+.selectBtn{
+    display: flex;
+    justify-content: center;
+}
+
+.selectBtn div{
+    margin: 12px;
+}
+
+#address_kakao{
+    width: 90%;
+    height: 25px;
+    margin: 0px 12px 0px 12px;
+}
+video{
+    min-height: 500px;
+}
+
+#address_detail{
+    width: 90%;
+    height: 25px;
+    margin: 12px 12px 0px 12px;
+}
+
+#VideoUpload{
+    margin: 12px;
+}
+
+#price{
+    width: 90%;
+    height: 25px;
+    margin: 12px 12px 0px 12px;
+}
+
+.btnBox{
+    display: flex;
+    justify-content: center;
+    margin: 12px;
+}
+
+.btnBox button{
+    margin: 12px;
+    width: 100px;
+    height: 30px;
+}
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e0e0d61159.js" crossorigin="anonymous"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="mento_post.js" defer></script>
+    <script defer src="./js/home/write_select.js"></script>
+    <link rel="stylesheet" href="./css/home/mento_post.css">
+    <title>UNIVERSING</title>
+</head>
+<body>
+    <header>
+        <div class="commu_title">
+            서비스 작성
+        </div>
+    </header>
+
+    <section class="mentoPostSection">
+        <form action="/mento_insert" method="post" enctype="multipart/form-data">
+         
+            <input type="text" id="title" name="title" class="postTitle" placeholder="제목을 입력하세요.">
+            <div id="jsselect" name="jsselect"></div>
+            <br>
+         
+
+            <div class="photoAndVideo">
+                <div class="cameraBtn">
+                    <i class="fa-solid fa-camera" onclick="alert('사진을 추가해주세요!');onClickUpload()"></i>
+                    <form action  = "/upload" method="post" enctype="multipart/form-data">
+                    <!-- <input type="file" name="image"  accept="image/*" multiple="multiple" >
+        -->
+                    <input type="text" id="file_route" disabled="disabled" value=" 파일선택" >
+                    <input type="file" id="photoFile" name="image" accept="image/*" multiple="multiple" required=true 
+style="position:absolute; clip:rect(0, 0, 0, 0);" onchange="javascript:document.getElementById('file_route').value = this.value">
+                </div>
+        
+                <!--<div class="videoBtn">
+                    <i class="fa-solid fa-video" onclick="onClickUpload();"></i><input type="file"  name="VideoUpload" id="VideoUpload">
+                </div>-->
+
+                <div class="fileName">
+                    <p id="fileName"></p>
+                </div>
+            </div>
+           
+
+           <textarea name= "content" id="content" class="content"></textarea>
+
+           <div class="selectBtn">
+            <div>동영상올리기<input type="radio" name="video" id="video" value="video" onClick="this.form.address_detail.disabled=true" ></div>
+            <div>직접만나서<input  type="radio" name="radio" id="meet"  value="meet" onClick="this.form.VideoUpload.disabled=true" ></div>
+           </div>
+           
+
+            <input type="text" id="address_kakao" name="address" placeholder="주소입력해주세요." readonly />
+            <input type="text" id="address_detail" name="address_detail" placeholder="상세주소입력">
+           <input type="text" id="price" name="price" placeholder="판매가격 입력">
+      
+
+           <div class="btnBox">
+            <button type="reset" onclick="history.back();">취소</button>
+            <button type="submit">등록</button>
+           </div>
+                    </form>
+        </form>
+    </section>
+    
+
+    <footer>
+        <ul class="bottom_bar">
+            <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="/post"><i class="fa-solid fa-rectangle-list"></i></a></li>
+            <li><a href="/music_list"><i class="fa-solid fa-music"></i></a></li>
+            <li><a href="/chat"><i class="fa-solid fa-comment"></i></a></i>
+            <li><a href="/myinfo"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+function onClickUpload() {
+            let myInput = document.getElementById("photoFile");
+            myInput.click();
+        }
+
+
+    window.onload = function(){
+    document.getElementById("address_kakao").addEventListener("click", function(){ //주소입력칸을 클릭하면
+        //카카오 지도 발생
+        new daum.Postcode({
+            oncomplete: function(data) { //선택시 입력값 세팅
+                document.getElementById("address_kakao").value = data.address; // 주소 넣기
+                document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
+            }
+        }).open();
+    });
+}
+</script>
+</body>
+</html>
